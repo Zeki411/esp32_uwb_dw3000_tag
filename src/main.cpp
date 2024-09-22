@@ -179,6 +179,30 @@ void test_reg_sys_enable(){
     Serial.println();
 }
 
+void test_reg_chan_ctrl() {
+    dw3000_reg_chan_ctrl_t r_data = {0};
+    dw3000_reg_chan_ctrl_t w_data = {0};
+    Serial.println();
+    Serial.printf("Write to CHAN_CTRL register\n");
+    w_data.fields.rf_chan = 0x00;
+    w_data.fields.sfd_type = 0x03;
+    w_data.fields.tx_pcode = 0x09;
+    w_data.fields.rx_pcode = 0x09;
+    dw3000.write_full_address(DW3000_REG_1_ADDR, DW3000_REG_1_CHAN_CTRL_OFFSET, (uint8_t*)&w_data.raw, DW3000_REG_1_CHAN_CTRL_LEN);
+    delay(100);
+    Serial.printf("Read from CHAN_CTRL register\n");
+    dw3000.read_full_address(DW3000_REG_1_ADDR, DW3000_REG_1_CHAN_CTRL_OFFSET, (uint8_t*)&r_data.raw, DW3000_REG_1_CHAN_CTRL_LEN);
+    Serial.printf("CHAN_CTRL: ");
+    for(int i = 0; i < DW3000_REG_1_CHAN_CTRL_LEN; i++){
+        Serial.printf(" 0x%02X ", r_data.raw[i]);
+    }
+    Serial.println();
+    Serial.printf("RF_CHAN: 0x%02X\n", r_data.fields.rf_chan);
+    Serial.printf("SFD_TYPE: 0x%02X\n", r_data.fields.sfd_type);
+    Serial.printf("TX_PCODE: 0x%02X\n", r_data.fields.tx_pcode);
+    Serial.printf("RX_PCODE: 0x%02X\n", r_data.fields.rx_pcode);
+    Serial.println();
+}
 
 void setup() {
     Serial.begin(115200);
@@ -189,7 +213,7 @@ void setup() {
 
 void loop() { 
 
-    test_reg_sys_enable();
+    test_reg_chan_ctrl();
 
     while(1);
     delay(1000);

@@ -2,7 +2,7 @@
 #define __DW3000_REGS_H__
 
 /******************************************************************************
-* @brief Bit definitions for register 0 : GEN_CFG_AES
+* @brief Bit definitions for register page 0x00 : GEN_CFG_AES LOW
 **/
 #define DW3000_REG_0_ADDR                                 0x00
 
@@ -47,6 +47,80 @@
 
 #define DW3000_REG_0_SYS_STATUS_OFFSET                    0x44
 #define DW3000_REG_0_SYS_STATUS_LEN                       6
+
+#define DW3000_REG_0_RX_FINFO_OFFSET                      0x4C
+#define DW3000_REG_0_RX_FINFO_LEN                         4
+
+#define DW3000_REG_0_RX_TIME_OFFSET                       0x64
+#define DW3000_REG_0_RX_TIME_LEN                          16
+
+#define DW3000_REG_0_TX_TIME_OFFSET                       0x74
+#define DW3000_REG_0_TX_TIME_LEN                          5
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x01 : GEN_CFG_AES HIGH
+**/
+#define DW3000_REG_1_ADDR                                 0x01
+
+#define DW3000_REG_1_TX_RAWST_OFFSET                      0x00
+#define DW3000_REG_1_TX_RAWST_LEN                         4
+
+#define DW3000_REG_1_TX_ANTD_OFFSET                       0x04
+#define DW3000_REG_1_TX_ANTD_LEN                          2
+
+#define DW3000_REG_1_ACK_RESP_T_OFFSET                    0x08
+#define DW3000_REG_1_ACK_RESP_T_LEN                       4
+
+#define DW3000_REG_1_TX_POWER_OFFSET                      0x0C
+#define DW3000_REG_1_TX_POWER_LEN                         4
+
+#define DW3000_REG_1_CHAN_CTRL_OFFSET                     0x14
+#define DW3000_REG_1_CHAN_CTRL_LEN                        2
+
+#define DW3000_REG_1_LE_PEND_01_OFFSET                    0x18
+#define DW3000_REG_1_LE_PEND_01_LEN                       4
+
+#define DW3000_REG_1_LE_PEND_23_OFFSET                    0x1C
+#define DW3000_REG_1_LE_PEND_23_LEN                       4
+
+#define DW3000_REG_1_SPI_COLLISION_OFFSET                 0x20
+#define DW3000_REG_1_SPI_COLLISION_LEN                    1
+
+#define DW3000_REG_1_RDB_STATUS_OFFSET                    0x24
+#define DW3000_REG_1_RDB_STATUS_LEN                       1
+
+#define DW3000_REG_1_RDB_DIAG_OFFSET                      0x28
+#define DW3000_REG_1_RDB_DIAG_LEN                         1
+
+#define DW3000_REG_1_AES_CFG_OFFSET                       0x30
+#define DW3000_REG_1_AES_CFG_LEN                          2
+
+#define DW3000_REG_1_AES_IV0_OFFSET                       0x34
+#define DW3000_REG_1_AES_IV0_LEN                          4
+
+#define DW3000_REG_1_AES_IV1_OFFSET                       0x38
+#define DW3000_REG_1_AES_IV1_LEN                          4
+
+#define DW3000_REG_1_AES_IV2_OFFSET                       0x3C
+#define DW3000_REG_1_AES_IV2_LEN                          4
+
+#define DW3000_REG_1_AES_IV3_OFFSET                       0x40
+#define DW3000_REG_1_AES_IV3_LEN                          2
+
+#define DW3000_REG_1_AES_IV4_OFFSET                       0x42
+#define DW3000_REG_1_AES_IV4_LEN                          2
+
+#define DW3000_REG_1_DMA_CFG_OFFSET                       0x44
+#define DW3000_REG_1_DMA_CFG_LEN                          8
+
+
+
+
+
+
+
+
+
 
 
 
