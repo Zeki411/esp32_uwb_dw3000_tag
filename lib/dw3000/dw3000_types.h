@@ -166,52 +166,52 @@ typedef union {
     uint8_t raw[DW3000_REG_0_SYS_CTRL_LEN];
 } dw3000_reg_sys_ctrl_t;
 
-
+//TODO: Check if this is correct
 typedef union {
     struct {
-        uint8_t :1;                     // Bit 0 (Reserved)
-        uint8_t cplock_en:1;            // Bit 1
-        uint8_t spicrce_en:1;           // Bit 2
-        uint8_t aat_en:1;               // Bit 3
-        uint8_t txfrb_en:1;             // Bit 4
-        uint8_t txprs_en:1;             // Bit 5
-        uint8_t txphs_en:1;             // Bit 6
-        uint8_t txfrs_en:1;             // Bit 7
-        uint8_t rxprd_en:1;             // Bit 8
-        uint8_t rxsfdd_en:1;            // Bit 9
-        uint8_t ciadone_en:1;           // Bit 10
-        uint8_t rxphd_en:1;             // Bit 11
-        uint8_t rxphe_en:1;             // Bit 12
-        uint8_t rxfr_en:1;              // Bit 13
-        uint8_t rxfcg_en:1;             // Bit 14
-        uint8_t rxfce_en:1;             // Bit 15
-        uint8_t rxrfsl_en:1;            // Bit 16
-        uint8_t rxfto_en:1;             // Bit 17
-        uint8_t ciaerr_en:1;            // Bit 18
-        uint8_t vwarn_en:1;             // Bit 19
-        uint8_t rxovrr_en:1;            // Bit 20
-        uint8_t rxpto_en:1;             // Bit 21
-        uint8_t :1;                     // Bit 22 (Reserved)
-        uint8_t spirdy_en:1;            // Bit 23
-        uint8_t rcinit_en:1;            // Bit 24
-        uint8_t pll_hilo_en:1;          // Bit 25
-        uint8_t rxsto_en:1;             // Bit 26
-        uint8_t hpdwarn_en:1;           // Bit 27
-        uint8_t cperr_en:1;             // Bit 28
-        uint8_t arfe_en:1;              // Bit 29
-        uint8_t :3;                     // Bits 30-31 + next Bit 0 (Reserved)
-        uint8_t rxprej_en:1;            // next Bit 1
-        uint8_t :2;                     // next Bits 2-3 (Reserved)
-        uint8_t vt_det_en:1;            // next Bit 4
-        uint8_t gpioiron_en:1;          // next Bit 5
-        uint8_t aes_done_en:1;          // next Bit 6
-        uint8_t aes_err_en:1;           // next Bit 7
-        uint8_t cmd_err_en:1;           // next Bit 8
-        uint8_t spi_ovr_en:1;           // next Bit 9
-        uint8_t spi_unf_en:1;           // next Bit 10
-        uint8_t spierr_en:1;            // next Bit 11
-        uint8_t cca_fail_en:1;          // next Bit 12
-        uint8_t :3;                     // next Bits 13-15 (not used)
+        uint16_t :1;                     // Bit 0 (Reserved)
+        uint16_t cplock_en:1;            // Bit 1
+        uint16_t spicrce_en:1;           // Bit 2
+        uint16_t aat_en:1;               // Bit 3
+        uint16_t txfrb_en:1;             // Bit 4
+        uint16_t txprs_en:1;             // Bit 5
+        uint16_t txphs_en:1;             // Bit 6
+        uint16_t txfrs_en:1;             // Bit 7
+        uint16_t rxprd_en:1;             // Bit 8
+        uint16_t rxsfdd_en:1;            // Bit 9
+        uint16_t ciadone_en:1;           // Bit 10
+        uint16_t rxphd_en:1;             // Bit 11
+        uint16_t rxphe_en:1;             // Bit 12
+        uint16_t rxfr_en:1;              // Bit 13
+        uint16_t rxfcg_en:1;             // Bit 14
+        uint16_t rxfce_en:1;             // Bit 15
+        uint16_t rxrfsl_en:1;            // Bit 16
+        uint16_t rxfto_en:1;             // Bit 17
+        uint16_t ciaerr_en:1;            // Bit 18
+        uint16_t vwarn_en:1;             // Bit 19
+        uint16_t rxovrr_en:1;            // Bit 20
+        uint16_t rxpto_en:1;             // Bit 21
+        uint16_t :1;                     // Bit 22 (Reserved)
+        uint16_t spirdy_en:1;            // Bit 23
+        uint16_t rcinit_en:1;            // Bit 24
+        uint16_t pll_hilo_en:1;          // Bit 25
+        uint16_t rxsto_en:1;             // Bit 26
+        uint16_t hpdwarn_en:1;           // Bit 27
+        uint16_t cperr_en:1;             // Bit 28
+        uint16_t arfe_en:1;              // Bit 29
+        uint16_t :3;                     // Bits 30-31 + next Bit 0 (Reserved)
+        uint16_t rxprej_en:1;            // next Bit 1
+        uint16_t :2;                     // next Bits 2-3 (Reserved)
+        uint16_t vt_det_en:1;            // next Bit 4
+        uint16_t gpioiron_en:1;          // next Bit 5
+        uint16_t aes_done_en:1;          // next Bit 6
+        uint16_t aes_err_en:1;           // next Bit 7
+        uint16_t cmd_err_en:1;           // next Bit 8
+        uint16_t spi_ovr_en:1;           // next Bit 9
+        uint16_t spi_unf_en:1;           // next Bit 10
+        uint16_t spierr_en:1;            // next Bit 11
+        uint16_t cca_fail_en:1;          // next Bit 12
+        uint16_t :3;                     // next Bits 13-15 (not used)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_0_SYS_ENABLE_LEN];
 } dw3000_reg_sys_enable_t;
@@ -219,49 +219,49 @@ typedef union {
 
 typedef union {
     struct {
-        uint8_t irqs       : 1;  // Bit 0
-        uint8_t cplock     : 1;  // Bit 1
-        uint8_t spicrce    : 1;  // Bit 2
-        uint8_t aat        : 1;  // Bit 3
-        uint8_t txfrb      : 1;  // Bit 4
-        uint8_t txprs      : 1;  // Bit 5
-        uint8_t txphs      : 1;  // Bit 6
-        uint8_t txfrs      : 1;  // Bit 7
-        uint8_t rxprd      : 1;  // Bit 8
-        uint8_t rxsfdd     : 1;  // Bit 9
-        uint8_t ciadone    : 1;  // Bit 10
-        uint8_t rxphd      : 1;  // Bit 11
-        uint8_t rxphe      : 1;  // Bit 12
-        uint8_t rxfr       : 1;  // Bit 13
-        uint8_t rxfcg      : 1;  // Bit 14
-        uint8_t rxfce      : 1;  // Bit 15
-        uint8_t rxrfsl     : 1;  // Bit 16
-        uint8_t rxfto      : 1;  // Bit 17
-        uint8_t ciaerr     : 1;  // Bit 18
-        uint8_t vwarn      : 1;  // Bit 19
-        uint8_t rxovrr     : 1;  // Bit 20
-        uint8_t rxpto      : 1;  // Bit 21
-        uint8_t            : 1;  // Bit 22  
-        uint8_t spirdy     : 1;  // Bit 23
-        uint8_t rcinit     : 1;  // Bit 24
-        uint8_t pllhilo    : 1;  // Bit 25
-        uint8_t rxsto      : 1;  // Bit 26
-        uint8_t hpdwarn    : 1;  // Bit 27
-        uint8_t cperr      : 1;  // Bit 28
-        uint8_t arfe       : 1;  // Bit 29
-        uint8_t            : 3;  // Bits 30-31 + next Bit 0 (Reserved)
-        uint8_t rxprej     : 1;  // next Bit 1
-        uint8_t            : 2;  // next Bits 2-3 (Reserved)
-        uint8_t vt_det     : 1;  // next Bit 4
-        uint8_t gpioirq    : 1;  // next Bit 5
-        uint8_t aes_done   : 1;  // next Bit 6
-        uint8_t aes_err    : 1;  // next Bit 7
-        uint8_t cmd_err    : 1;  // next Bit 8
-        uint8_t spi_ovr    : 1;  // next Bit 9
-        uint8_t spi_unf    : 1;  // next Bit 10
-        uint8_t spierr     : 1;  // next Bit 11
-        uint8_t cca_fail   : 1;  // next Bit 12
-        uint8_t            : 3;  // next Bits 13-15 (not used)
+        uint16_t irqs       : 1;  // Bit 0
+        uint16_t cplock     : 1;  // Bit 1
+        uint16_t spicrce    : 1;  // Bit 2
+        uint16_t aat        : 1;  // Bit 3
+        uint16_t txfrb      : 1;  // Bit 4
+        uint16_t txprs      : 1;  // Bit 5
+        uint16_t txphs      : 1;  // Bit 6
+        uint16_t txfrs      : 1;  // Bit 7
+        uint16_t rxprd      : 1;  // Bit 8
+        uint16_t rxsfdd     : 1;  // Bit 9
+        uint16_t ciadone    : 1;  // Bit 10
+        uint16_t rxphd      : 1;  // Bit 11
+        uint16_t rxphe      : 1;  // Bit 12
+        uint16_t rxfr       : 1;  // Bit 13
+        uint16_t rxfcg      : 1;  // Bit 14
+        uint16_t rxfce      : 1;  // Bit 15
+        uint16_t rxrfsl     : 1;  // Bit 16
+        uint16_t rxfto      : 1;  // Bit 17
+        uint16_t ciaerr     : 1;  // Bit 18
+        uint16_t vwarn      : 1;  // Bit 19
+        uint16_t rxovrr     : 1;  // Bit 20
+        uint16_t rxpto      : 1;  // Bit 21
+        uint16_t            : 1;  // Bit 22  
+        uint16_t spirdy     : 1;  // Bit 23
+        uint16_t rcinit     : 1;  // Bit 24
+        uint16_t pllhilo    : 1;  // Bit 25
+        uint16_t rxsto      : 1;  // Bit 26
+        uint16_t hpdwarn    : 1;  // Bit 27
+        uint16_t cperr      : 1;  // Bit 28
+        uint16_t arfe       : 1;  // Bit 29
+        uint16_t            : 3;  // Bits 30-31 + next Bit 0 (Reserved)
+        uint16_t rxprej     : 1;  // next Bit 1
+        uint16_t            : 2;  // next Bits 2-3 (Reserved)
+        uint16_t vt_det     : 1;  // next Bit 4
+        uint16_t gpioirq    : 1;  // next Bit 5
+        uint16_t aes_done   : 1;  // next Bit 6
+        uint16_t aes_err    : 1;  // next Bit 7
+        uint16_t cmd_err    : 1;  // next Bit 8
+        uint16_t spi_ovr    : 1;  // next Bit 9
+        uint16_t spi_unf    : 1;  // next Bit 10
+        uint16_t spierr     : 1;  // next Bit 11
+        uint16_t cca_fail   : 1;  // next Bit 12
+        uint16_t            : 3;  // next Bits 13-15 (not used)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_0_SYS_STATUS_LEN]; 
 } dw3000_reg_sys_status_t;
@@ -482,10 +482,10 @@ typedef uint8_t dw3000_reg_sts_iv_t[DW3000_REG_2_STS_IV_LEN];
 
 typedef union {
     struct {
-        uint8_t rx_tune:1; // Bit 0
-        uint8_t :8;        // Bits 1-8 (Reserved)
-        uint8_t thr_64:6;  // Bits 9-14
-        uint8_t :1;        // Bit 15 (Reserved)
+       uint16_t rx_tune:1; // Bit 0
+       uint16_t :8;        // Bits 1-8 (Reserved)
+       uint16_t thr_64:6;  // Bits 9-14
+       uint16_t :1;        // Bit 15 (Reserved)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_3_DCG_CFG_LEN];
 } dw3000_reg_dcg_cfg_t;
@@ -519,10 +519,10 @@ typedef union {
 
 typedef union {
     struct {
-        uint8_t :3;             // Bits 0-2 (Reserved)
-        uint8_t osts_wait:8;    // Bits 3-10
-        uint8_t ostr_mode:1;    // Bit 11
-        uint32_t :20;           // Bits 12-31 (Reserved)
+        uint16_t :3;             // Bits 0-2 (Reserved)
+        uint16_t osts_wait:8;    // Bits 3-10
+        uint16_t ostr_mode:1;    // Bit 11
+        uint32_t :20;               // Bits 12-31 (Reserved)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_4_EC_CTRL_LEN];
 } dw3000_reg_ec_ctrl_t;
@@ -533,9 +533,9 @@ typedef union {
         uint8_t cal_mode:2; // Bits 0-1
         uint8_t :2;         // Bits 2-3 (Reserved)
         uint8_t cal_en:1;   // Bit 4
-        uint8_t :11;        // Bits 5-15 (Reserved)
+        uint16_t :11;       // Bits 5-15 (Reserved)
         uint8_t comp_dly:4; // Bits 16-19
-        uint8_t :12;        // Bits 20-31 (Reserved)
+        uint16_t :12;       // Bits 20-31 (Reserved)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_4_RX_CAL_LEN];
 } dw3000_reg_rx_cal_t;
@@ -552,16 +552,16 @@ typedef uint8_t dw3000_reg_rx_cal_sts_t[DW3000_REG_4_RX_CAL_STS_LEN];
 
 typedef union {
     struct {
-        uint8_t msgp0:3; // Bits 0-2
-        uint8_t msgp1:3; // Bits 3-5
-        uint8_t msgp2:3; // Bits 6-8
-        uint8_t msgp3:3; // Bits 9-11
-        uint8_t msgp4:3; // Bits 12-14
-        uint8_t msgp5:3; // Bits 15-17
-        uint8_t msgp6:3; // Bits 18-20
-        uint8_t msgp7:3; // Bits 21-23
-        uint8_t msgp8:3; // Bits 24-26
-        uint8_t :5;      // Bits 27-31 (Reserved)
+        uint16_t msgp0:3; // Bits 0-2
+        uint16_t msgp1:3; // Bits 3-5
+        uint16_t msgp2:3; // Bits 6-8
+        uint16_t msgp3:3; // Bits 9-11
+        uint16_t msgp4:3; // Bits 12-14
+        uint16_t msgp5:3; // Bits 15-17
+        uint16_t msgp6:3; // Bits 18-20
+        uint16_t msgp7:3; // Bits 21-23
+        uint16_t msgp8:3; // Bits 24-26
+        uint16_t :5;      // Bits 27-31 (Reserved)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_5_GPIO_MODE_LEN];
 } dw3000_reg_gpio_mode_t;
@@ -741,6 +741,100 @@ typedef union {
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_5_GPIO_RAW_LEN];
 } dw3000_reg_gpio_raw_t;
+
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x06: DRX_CONF
+ * @brief Digital receiver configuration
+**/
+
+typedef union {
+    struct {
+        uint8_t pac:2;       // Bits 0-1
+        uint8_t :2;          // Bits 2-3 (Reserved)
+        uint8_t dt0b4:1;     // Bit 4
+        uint16_t :11;        // Bits 5-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_6_DTUNE0_LEN];
+} dw3000_reg_dtune0_t;
+
+typedef uint8_t dw3000_reg_rx_sfd_toc_t[DW3000_REG_6_RX_SFD_TOC_LEN];
+
+typedef uint8_t dw3000_reg_pre_toc_t[DW3000_REG_6_PRE_TOC_LEN];
+
+typedef uint8_t dw3000_reg_dtune3_t[DW3000_REG_6_DTUNE3_LEN];
+
+typedef uint8_t dw3000_reg_dtune_5_t[DW3000_REG_6_DTUNE_5_LEN];
+
+typedef uint8_t dw3000_reg_drx_car_int_t[DW3000_REG_6_DRX_CAR_INT_LEN];
+
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x07: RF_CONF
+ * @brief Analog RF configuration block
+**/
+
+typedef uint8_t dw3000_reg_rf_enable_t[DW3000_REG_7_RF_ENABLE_LEN];
+
+typedef uint8_t dw3000_reg_rf_ctrl_mask_t[DW3000_REG_7_RF_CTRL_MASK_LEN];
+
+typedef union {
+    struct {
+        uint8_t antswnotoggle:1; // Bit 0
+        uint8_t antswpdoaport:1; // Bit 1
+        uint8_t :6;              // Bits 2-7 (Reserved)
+        uint8_t antswen:1;       // Bit 8
+        uint8_t :3;              // Bits 9-11 (Reserved)
+        uint8_t antswctrl:3;     // Bits 12-14
+        uint8_t :1;              // Bit 15 (Reserved)
+        uint8_t trxswen:1;       // Bit 16
+        uint8_t :7;              // Bits 17-23 (Reserved)
+        uint8_t trxswctrl:6;     // Bits 24-29
+        uint8_t :2;              // Bits 30-31 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_7_RF_SWITCH_LEN];
+} dw3000_reg_rf_switch_t;
+
+typedef uint8_t dw3000_reg_rf_tx_ctrl_1_t[DW3000_REG_7_RF_TX_CTRL_1_LEN];
+
+typedef union {
+    struct {
+        uint8_t pg_delay:6; // Bits 0-5
+        uint32_t :26;       // Bits 6-31 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_7_RF_TX_CTRL_2_LEN];
+} dw3000_reg_rf_tx_ctrl_2_t;
+
+typedef union {
+    struct {
+        uint8_t tx_entest:4; // Bits 0-3
+        uint8_t :4;          // Bits 4-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_7_TX_TEST_LEN];
+} dw3000_reg_tx_test_t;
+
+typedef union {
+    struct {
+        uint8_t :2;          // Bits 0-1 (Reserved)
+        uint8_t sar_rden:1;  // Bit 2
+        uint8_t :5;          // Bits 3-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_7_SAR_TEST_LEN];
+} dw3000_reg_sar_test_t;
+
+typedef union {
+    struct {
+        uint64_t ldo_tune:60; // p1 Bits 0-31 + p2 Bits 0-27
+        uint32_t :4;          // p2 Bits 28-31 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_7_LDO_TUNE_LEN];
+} dw3000_reg_ldo_tune_t;
+
+
+
+
+
+
 
 
 

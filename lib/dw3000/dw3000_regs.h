@@ -249,6 +249,65 @@
 #define DW3000_REG_5_GPIO_RAW_OFFSET                      0x2C
 #define DW3000_REG_5_GPIO_RAW_LEN                         2
 
+/******************************************************************************
+ * @brief Bit definitions for register page 0x06: DRX_CONF
+ * @brief Digital receiver configuration
+**/
+
+#define DW3000_REG_6_ADDR                                 0x06
+
+#define DW3000_REG_6_DTUNE0_OFFSET                        0x00
+#define DW3000_REG_6_DTUNE0_LEN                           2
+
+#define DW3000_REG_6_RX_SFD_TOC_OFFSET                    0x02
+#define DW3000_REG_6_RX_SFD_TOC_LEN                       2
+
+#define DW3000_REG_6_PRE_TOC_OFFSET                       0x04
+#define DW3000_REG_6_PRE_TOC_LEN                          2
+
+#define DW3000_REG_6_DTUNE3_OFFSET                        0x0C
+#define DW3000_REG_6_DTUNE3_LEN                           4
+
+#define DW3000_REG_6_DTUNE_5_OFFSET                       0x14
+#define DW3000_REG_6_DTUNE_5_LEN                          4
+
+#define DW3000_REG_6_DRX_CAR_INT_OFFSET                   0x29
+#define DW3000_REG_6_DRX_CAR_INT_LEN                      3
+
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x07: RF_CONF
+ * @brief Analog RF configuration block
+**/
+
+#define DW3000_REG_7_ADDR                                 0x07
+
+#define DW3000_REG_7_RF_ENABLE_OFFSET                     0x00
+#define DW3000_REG_7_RF_ENABLE_LEN                        4
+
+#define DW3000_REG_7_RF_CTRL_MASK_OFFSET                  0x04
+#define DW3000_REG_7_RF_CTRL_MASK_LEN                     4
+
+#define DW3000_REG_7_RF_SWITCH_OFFSET                     0x14
+#define DW3000_REG_7_RF_SWITCH_LEN                        4
+
+#define DW3000_REG_7_RF_TX_CTRL_1_OFFSET                  0x1A
+#define DW3000_REG_7_RF_TX_CTRL_1_LEN                     1
+
+#define DW3000_REG_7_RF_TX_CTRL_2_OFFSET                  0x1C
+#define DW3000_REG_7_RF_TX_CTRL_2_LEN                     4
+
+#define DW3000_REG_7_TX_TEST_OFFSET                       0x28
+#define DW3000_REG_7_TX_TEST_LEN                          1
+
+#define DW3000_REG_7_SAR_TEST_OFFSET                      0x34
+#define DW3000_REG_7_SAR_TEST_LEN                         1
+
+#define DW3000_REG_7_LDO_TUNE_OFFSET                      0x40
+#define DW3000_REG_7_LDO_TUNE_LEN                         8
+
+
+
 
 
 
