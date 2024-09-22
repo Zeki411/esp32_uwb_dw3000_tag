@@ -550,6 +550,210 @@ typedef uint8_t dw3000_reg_rx_cal_sts_t[DW3000_REG_4_RX_CAL_STS_LEN];
  * @brief GPIO control and status
 **/
 
+typedef union {
+    struct {
+        uint8_t msgp0:3; // Bits 0-2
+        uint8_t msgp1:3; // Bits 3-5
+        uint8_t msgp2:3; // Bits 6-8
+        uint8_t msgp3:3; // Bits 9-11
+        uint8_t msgp4:3; // Bits 12-14
+        uint8_t msgp5:3; // Bits 15-17
+        uint8_t msgp6:3; // Bits 18-20
+        uint8_t msgp7:3; // Bits 21-23
+        uint8_t msgp8:3; // Bits 24-26
+        uint8_t :5;      // Bits 27-31 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_MODE_LEN];
+} dw3000_reg_gpio_mode_t;
+
+typedef union {
+    struct {
+        uint8_t gpen0:1; // Bit 0
+        uint8_t gpen1:1; // Bit 1
+        uint8_t gpen2:1; // Bit 2
+        uint8_t gpen3:1; // Bit 3
+        uint8_t gpen4:1; // Bit 4
+        uint8_t gpen5:1; // Bit 5
+        uint8_t gpen6:1; // Bit 6
+        uint8_t gpen7:1; // Bit 7
+        uint8_t gpen8:1; // Bit 8
+        uint8_t :7;         // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_PULL_EN_LEN];
+} dw3000_reg_gpio_pull_en_t;
+
+typedef union {
+    struct {
+        uint8_t gdp0:1; // Bit 0
+        uint8_t gdp1:1; // Bit 1
+        uint8_t gdp2:1; // Bit 2
+        uint8_t gdp3:1; // Bit 3
+        uint8_t gdp4:1; // Bit 4
+        uint8_t gdp5:1; // Bit 5
+        uint8_t gdp6:1; // Bit 6
+        uint8_t gdp7:1; // Bit 7
+        uint8_t gdp8:1; // Bit 8
+        uint8_t :7;     // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_DIR_LEN];
+} dw3000_reg_gpio_dir_t;
+
+typedef union {
+    struct {
+        uint8_t gop0:1; // Bit 0
+        uint8_t gop1:1; // Bit 1
+        uint8_t gop2:1; // Bit 2
+        uint8_t gop3:1; // Bit 3
+        uint8_t gop4:1; // Bit 4
+        uint8_t gop5:1; // Bit 5
+        uint8_t gop6:1; // Bit 6
+        uint8_t gop7:1; // Bit 7
+        uint8_t gop8:1; // Bit 8
+        uint8_t :7;     // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_OUT_LEN];
+} dw3000_reg_gpio_out_t;
+
+typedef union {
+    struct {
+        uint8_t girqe0:1; // Bit 0
+        uint8_t girqe1:1; // Bit 1
+        uint8_t girqe2:1; // Bit 2
+        uint8_t girqe3:1; // Bit 3
+        uint8_t girqe4:1; // Bit 4
+        uint8_t girqe5:1; // Bit 5
+        uint8_t girqe6:1; // Bit 6
+        uint8_t girqe7:1; // Bit 7
+        uint8_t girqe8:1; // Bit 8
+        uint8_t :7;    // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_IRQE_LEN];
+} dw3000_reg_gpio_irqe_t;
+
+typedef union {
+    struct {
+        uint8_t gists0:1; // Bit 0
+        uint8_t gists1:1; // Bit 1
+        uint8_t gists2:1; // Bit 2
+        uint8_t gists3:1; // Bit 3
+        uint8_t gists4:1; // Bit 4
+        uint8_t gists5:1; // Bit 5
+        uint8_t gists6:1; // Bit 6
+        uint8_t gists7:1; // Bit 7
+        uint8_t gists8:1; // Bit 8
+        uint8_t :7;    // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_ISTS_LEN];
+} dw3000_reg_gpio_ists_t;
+
+typedef union {
+    struct {
+        uint8_t gisen0:1; // Bit 0
+        uint8_t gisen1:1; // Bit 1
+        uint8_t gisen2:1; // Bit 2
+        uint8_t gisen3:1; // Bit 3
+        uint8_t gisen4:1; // Bit 4
+        uint8_t gisen5:1; // Bit 5
+        uint8_t gisen6:1; // Bit 6
+        uint8_t gisen7:1; // Bit 7
+        uint8_t gisen8:1; // Bit 8
+        uint8_t :7;       // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_ISEN_LEN];
+} dw3000_reg_gpio_isen_t;
+
+typedef union {
+    struct {
+        uint8_t gimod0:1; // Bit 0
+        uint8_t gimod1:1; // Bit 1
+        uint8_t gimod2:1; // Bit 2
+        uint8_t gimod3:1; // Bit 3
+        uint8_t gimod4:1; // Bit 4
+        uint8_t gimod5:1; // Bit 5
+        uint8_t gimod6:1; // Bit 6
+        uint8_t gimod7:1; // Bit 7
+        uint8_t gimod8:1; // Bit 8
+        uint8_t :7;       // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_IMODE_LEN];
+} dw3000_reg_gpio_imode_t;
+
+typedef union {
+    struct {
+        uint8_t gibes0:1; // Bit 0
+        uint8_t gibes1:1; // Bit 1
+        uint8_t gibes2:1; // Bit 2
+        uint8_t gibes3:1; // Bit 3
+        uint8_t gibes4:1; // Bit 4
+        uint8_t gibes5:1; // Bit 5
+        uint8_t gibes6:1; // Bit 6
+        uint8_t gibes7:1; // Bit 7
+        uint8_t gibes8:1; // Bit 8
+        uint8_t :7;       // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_IBES_LEN];
+} dw3000_reg_gpio_ibes_t;
+
+typedef union {
+    struct {
+        uint8_t giclr0:1; // Bit 0
+        uint8_t giclr1:1; // Bit 1
+        uint8_t giclr2:1; // Bit 2
+        uint8_t giclr3:1; // Bit 3
+        uint8_t giclr4:1; // Bit 4
+        uint8_t giclr5:1; // Bit 5
+        uint8_t giclr6:1; // Bit 6
+        uint8_t giclr7:1; // Bit 7
+        uint8_t giclr8:1; // Bit 8
+        uint8_t :7;       // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_ICLR_LEN];
+} dw3000_reg_gpio_iclr_t;
+
+typedef union {
+    struct {
+        uint8_t gidbe0:1; // Bit 0
+        uint8_t gidbe1:1; // Bit 1
+        uint8_t gidbe2:1; // Bit 2
+        uint8_t gidbe3:1; // Bit 3
+        uint8_t gidbe4:1; // Bit 4
+        uint8_t gidbe5:1; // Bit 5
+        uint8_t gidbe6:1; // Bit 6
+        uint8_t gidbe7:1; // Bit 7
+        uint8_t gidbe8:1; // Bit 8
+        uint8_t :7;       // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_IDBE_LEN];
+} dw3000_reg_gpio_idbe_t;
+
+typedef union {
+    struct {
+        uint8_t grawp0:1; // Bit 0
+        uint8_t grawp1:1; // Bit 1
+        uint8_t grawp2:1; // Bit 2
+        uint8_t grawp3:1; // Bit 3
+        uint8_t grawp4:1; // Bit 4
+        uint8_t grawp5:1; // Bit 5
+        uint8_t grawp6:1; // Bit 6
+        uint8_t grawp7:1; // Bit 7
+        uint8_t grawp8:1; // Bit 8
+        uint8_t :7;       // Bits 9-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_5_GPIO_RAW_LEN];
+} dw3000_reg_gpio_raw_t;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

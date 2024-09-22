@@ -214,11 +214,40 @@
 #define DW3000_REG_5_ADDR                                 0x05
 
 #define DW3000_REG_5_GPIO_MODE_OFFSET                     0x00
+#define DW3000_REG_5_GPIO_MODE_LEN                        4
 
+#define DW3000_REG_5_GPIO_PULL_EN_OFFSET                  0x04
+#define DW3000_REG_5_GPIO_PULL_EN_LEN                     2
 
+#define DW3000_REG_5_GPIO_DIR_OFFSET                      0x08
+#define DW3000_REG_5_GPIO_DIR_LEN                         2
 
+#define DW3000_REG_5_GPIO_OUT_OFFSET                      0x0C
+#define DW3000_REG_5_GPIO_OUT_LEN                         2
 
+#define DW3000_REG_5_GPIO_IRQE_OFFSET                     0x10
+#define DW3000_REG_5_GPIO_IRQE_LEN                        2
 
+#define DW3000_REG_5_GPIO_ISTS_OFFSET                     0x14
+#define DW3000_REG_5_GPIO_ISTS_LEN                        2
+
+#define DW3000_REG_5_GPIO_ISEN_OFFSET                     0x18
+#define DW3000_REG_5_GPIO_ISEN_LEN                        2
+
+#define DW3000_REG_5_GPIO_IMODE_OFFSET                    0x1C
+#define DW3000_REG_5_GPIO_IMODE_LEN                       2
+
+#define DW3000_REG_5_GPIO_IBES_OFFSET                     0x20
+#define DW3000_REG_5_GPIO_IBES_LEN                        2
+
+#define DW3000_REG_5_GPIO_ICLR_OFFSET                     0x24
+#define DW3000_REG_5_GPIO_ICLR_LEN                        2
+
+#define DW3000_REG_5_GPIO_IDBE_OFFSET                     0x28
+#define DW3000_REG_5_GPIO_IDBE_LEN                        2
+
+#define DW3000_REG_5_GPIO_RAW_OFFSET                      0x2C
+#define DW3000_REG_5_GPIO_RAW_LEN                         2
 
 
 
