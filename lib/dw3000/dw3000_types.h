@@ -409,16 +409,16 @@ typedef uint8_t dw3000_reg_aes_iv4_t[DW3000_REG_1_AES_IV4_LEN];
 
 typedef union {
     struct {
-        uint8_t src_port:3;     // p1 Bits 0-2
-        uint8_t src_addr:10;    // p1 Bits 3-12
-        uint8_t dst_port:3;     // p1 Bits 13-15
-        uint8_t dst_addr:10;    // p1 Bits 16-25
-        uint8_t cp_end_sel:1;   // p1 Bit 26
-        uint8_t :5;             // p1 Bits 27-31 (Reserved)
-        uint8_t hdr_size:7;     // p2 Bits 0-6
-        uint8_t pyld_size:10;   // p2 Bits 7-16
-        uint8_t :7;             // p2 Bits 17-23 (Reserved)
-        uint8_t :8;             // p2 Bits 24-31 (Not used)
+        uint8_t src_port:3;         // p1 Bits 0-2
+        uint16_t src_addr:10;       // p1 Bits 3-12
+        uint8_t dst_port:3;         // p1 Bits 13-15
+        uint16_t dst_addr:10;       // p1 Bits 16-25
+        uint8_t cp_end_sel:1;       // p1 Bit 26
+        uint8_t :5;                 // p1 Bits 27-31 (Reserved)
+        uint8_t hdr_size:7;         // p2 Bits 0-6
+        uint16_t pyld_size:10;      // p2 Bits 7-16
+        uint8_t :7;                 // p2 Bits 17-23 (Reserved)
+        uint8_t :8;                 // p2 Bits 24-31 (Not used)
     } __attribute__((packed)) fields;
     uint8_t raw[DW3000_REG_1_DMA_CFG_LEN]; 
 } dw3000_reg_dma_cfg_t;
@@ -476,6 +476,79 @@ typedef uint8_t dw3000_reg_sts_key_t[DW3000_REG_2_STS_KEY_LEN];
 
 typedef uint8_t dw3000_reg_sts_iv_t[DW3000_REG_2_STS_IV_LEN];
 
+/******************************************************************************
+ * @brief Bit definitions for register page 0x03: RX_TUNE
+**/
+
+typedef union {
+    struct {
+        uint8_t rx_tune:1; // Bit 0
+        uint8_t :8;        // Bits 1-8 (Reserved)
+        uint8_t thr_64:6;  // Bits 9-14
+        uint8_t :1;        // Bit 15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_3_DCG_CFG_LEN];
+} dw3000_reg_dcg_cfg_t;
+
+typedef uint8_t dw3000_reg_dgc_cfg0_t[DW3000_REG_3_DGC_CFG0_LEN];
+typedef uint8_t dw3000_reg_dgc_cfg1_t[DW3000_REG_3_DGC_CFG1_LEN];
+
+typedef uint8_t dw3000_reg_dgc_lut_0_t[DW3000_REG_3_DGC_LUT_0_LEN];
+typedef uint8_t dw3000_reg_dgc_lut_1_t[DW3000_REG_3_DGC_LUT_1_LEN];
+typedef uint8_t dw3000_reg_dgc_lut_2_t[DW3000_REG_3_DGC_LUT_2_LEN];
+typedef uint8_t dw3000_reg_dgc_lut_3_t[DW3000_REG_3_DGC_LUT_3_LEN];
+typedef uint8_t dw3000_reg_dgc_lut_4_t[DW3000_REG_3_DGC_LUT_4_LEN];
+typedef uint8_t dw3000_reg_dgc_lut_5_t[DW3000_REG_3_DGC_LUT_5_LEN];
+typedef uint8_t dw3000_reg_dgc_lut_6_t[DW3000_REG_3_DGC_LUT_6_LEN];
+
+
+typedef union {
+    struct {
+        uint32_t :28;               // Bits 0-27 (Reserved)
+        uint8_t dcg_decision:3;     // Bits 28-30
+        uint8_t :1;                 // Bit 31 (Not used)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_3_DCG_DBG_LEN];
+} dw3000_reg_dcg_dbg_t;
+
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x04: EXT_SYNC
+ * @brief External sync control and RX calibration
+**/
+
+typedef union {
+    struct {
+        uint8_t :3;             // Bits 0-2 (Reserved)
+        uint8_t osts_wait:8;    // Bits 3-10
+        uint8_t ostr_mode:1;    // Bit 11
+        uint32_t :20;           // Bits 12-31 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_4_EC_CTRL_LEN];
+} dw3000_reg_ec_ctrl_t;
+
+
+typedef union {
+    struct {
+        uint8_t cal_mode:2; // Bits 0-1
+        uint8_t :2;         // Bits 2-3 (Reserved)
+        uint8_t cal_en:1;   // Bit 4
+        uint8_t :11;        // Bits 5-15 (Reserved)
+        uint8_t comp_dly:4; // Bits 16-19
+        uint8_t :12;        // Bits 20-31 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_4_RX_CAL_LEN];
+} dw3000_reg_rx_cal_t;
+
+
+typedef uint8_t dw3000_reg_rx_cal_resi_t[DW3000_REG_4_RX_CAL_RESI_LEN];
+typedef uint8_t dw3000_reg_rx_cal_resq_t[DW3000_REG_4_RX_CAL_RESQ_LEN];
+typedef uint8_t dw3000_reg_rx_cal_sts_t[DW3000_REG_4_RX_CAL_STS_LEN];
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x05: GPIO_CTRL
+ * @brief GPIO control and status
+**/
 
 
 

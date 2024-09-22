@@ -28,6 +28,8 @@ void test_panadr_reg(){
     Serial.println();
 }
 
+
+
 void test_sys_cfg_reg() {
     dw3000_reg_sys_cfg_t w_data = {0};
     dw3000_reg_sys_cfg_t r_data = {0};
@@ -96,6 +98,7 @@ void test_reg_ff_cfg(){
     Serial.printf("SSADRAPE: 0x%02X\n", r_data.fields.ssadrape);
     Serial.printf("LSADRAPE: 0x%02X\n", r_data.fields.lsadrape);
 }
+
 
 void test_reg_tx_fctrl() {
     dw3000_reg_tx_fctrl_t r_data = {0};
@@ -204,6 +207,46 @@ void test_reg_chan_ctrl() {
     Serial.println();
 }
 
+
+void test_regs_rx_tune() {
+    dw3000_reg_dgc_cfg0_t cfg0_data = {0};
+    dw3000_reg_dgc_cfg1_t cfg1_data = {0};
+    dw3000_reg_dgc_lut_0_t lut0_data = {0};
+    dw3000_reg_dgc_lut_1_t lut1_data = {0};
+    dw3000_reg_dgc_lut_2_t lut2_data = {0};
+    dw3000_reg_dgc_lut_3_t lut3_data = {0};
+    dw3000_reg_dgc_lut_4_t lut4_data = {0};
+    dw3000_reg_dgc_lut_5_t lut5_data = {0};
+    dw3000_reg_dgc_lut_6_t lut6_data = {0};
+
+
+    Serial.println();
+    Serial.printf("Read from RX_TUNE registers\n");
+
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_CFG0_OFFSET, (uint8_t*)&cfg0_data, DW3000_REG_3_DGC_CFG0_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_CFG1_OFFSET, (uint8_t*)&cfg1_data, DW3000_REG_3_DGC_CFG1_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_0_OFFSET, (uint8_t*)&lut0_data, DW3000_REG_3_DGC_LUT_0_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_1_OFFSET, (uint8_t*)&lut1_data, DW3000_REG_3_DGC_LUT_1_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_2_OFFSET, (uint8_t*)&lut2_data, DW3000_REG_3_DGC_LUT_2_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_3_OFFSET, (uint8_t*)&lut3_data, DW3000_REG_3_DGC_LUT_3_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_4_OFFSET, (uint8_t*)&lut4_data, DW3000_REG_3_DGC_LUT_4_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_5_OFFSET, (uint8_t*)&lut5_data, DW3000_REG_3_DGC_LUT_5_LEN);
+    dw3000.read_full_address(DW3000_REG_3_ADDR, DW3000_REG_3_DGC_LUT_6_OFFSET, (uint8_t*)&lut6_data, DW3000_REG_3_DGC_LUT_6_LEN);
+
+    Serial.printf("DGC_CFG0: 0x%08X\n", *(uint32_t*)cfg0_data);
+    Serial.printf("DGC_CFG1: 0x%08X\n", *(uint32_t*)cfg1_data);
+    Serial.printf("DGC_LUT_0: 0x%08X\n", *(uint32_t*)lut0_data);
+    Serial.printf("DGC_LUT_1: 0x%08X\n", *(uint32_t*)lut1_data);
+    Serial.printf("DGC_LUT_2: 0x%08X\n", *(uint32_t*)lut2_data);
+    Serial.printf("DGC_LUT_3: 0x%08X\n", *(uint32_t*)lut3_data);
+    Serial.printf("DGC_LUT_4: 0x%08X\n", *(uint32_t*)lut4_data);
+    Serial.printf("DGC_LUT_5: 0x%08X\n", *(uint32_t*)lut5_data);
+    Serial.printf("DGC_LUT_6: 0x%08X\n", *(uint32_t*)lut6_data);
+    Serial.println();
+
+    
+}
+
 void setup() {
     Serial.begin(115200);
     dw3000.init();
@@ -213,7 +256,7 @@ void setup() {
 
 void loop() { 
 
-    test_reg_chan_ctrl();
+    test_regs_rx_tune();
 
     while(1);
     delay(1000);

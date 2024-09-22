@@ -148,6 +148,74 @@
 * @brief Bit definitions for register page 0x03: RX_TUNE
 **/
 
+#define DW3000_REG_3_ADDR                                 0x03
+
+#define DW3000_REG_3_DCG_CFG_OFFSET                       0x18
+#define DW3000_REG_3_DCG_CFG_LEN                          2
+
+#define DW3000_REG_3_DGC_CFG0_OFFSET                      0x1C
+#define DW3000_REG_3_DGC_CFG0_LEN                         4
+
+#define DW3000_REG_3_DGC_CFG1_OFFSET                      0x20
+#define DW3000_REG_3_DGC_CFG1_LEN                         4
+
+#define DW3000_REG_3_DGC_LUT_0_OFFSET                     0x38
+#define DW3000_REG_3_DGC_LUT_0_LEN                        4
+
+#define DW3000_REG_3_DGC_LUT_1_OFFSET                     0x3C
+#define DW3000_REG_3_DGC_LUT_1_LEN                        4
+
+#define DW3000_REG_3_DGC_LUT_2_OFFSET                     0x40
+#define DW3000_REG_3_DGC_LUT_2_LEN                        4
+
+#define DW3000_REG_3_DGC_LUT_3_OFFSET                     0x44
+#define DW3000_REG_3_DGC_LUT_3_LEN                        4
+
+#define DW3000_REG_3_DGC_LUT_4_OFFSET                     0x48
+#define DW3000_REG_3_DGC_LUT_4_LEN                        4
+
+#define DW3000_REG_3_DGC_LUT_5_OFFSET                     0x4C
+#define DW3000_REG_3_DGC_LUT_5_LEN                        4
+
+#define DW3000_REG_3_DGC_LUT_6_OFFSET                     0x50
+#define DW3000_REG_3_DGC_LUT_6_LEN                        4
+
+#define DW3000_REG_3_DCG_DBG_OFFSET                       0x60
+#define DW3000_REG_3_DCG_DBG_LEN                          4
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x04: EXT_SYNC
+ * @brief External sync control and RX calibration
+**/
+
+#define DW3000_REG_4_ADDR                                 0x04
+
+#define DW3000_REG_4_EC_CTRL_OFFSET                       0x00
+#define DW3000_REG_4_EC_CTRL_LEN                          4
+
+#define DW3000_REG_4_RX_CAL_OFFSET                        0x0C
+#define DW3000_REG_4_RX_CAL_LEN                           4
+
+#define DW3000_REG_4_RX_CAL_RESI_OFFSET                   0x14
+#define DW3000_REG_4_RX_CAL_RESI_LEN                      4
+
+#define DW3000_REG_4_RX_CAL_RESQ_OFFSET                   0x1C
+#define DW3000_REG_4_RX_CAL_RESQ_LEN                      4
+
+#define DW3000_REG_4_RX_CAL_STS_OFFSET                    0x20
+#define DW3000_REG_4_RX_CAL_STS_LEN                       1
+
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x05: GPIO_CTRL
+ * @brief GPIO control and status
+**/
+
+#define DW3000_REG_5_ADDR                                 0x05
+
+#define DW3000_REG_5_GPIO_MODE_OFFSET                     0x00
+
+
 
 
 
