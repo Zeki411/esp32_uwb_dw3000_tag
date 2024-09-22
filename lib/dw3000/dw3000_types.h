@@ -423,6 +423,67 @@ typedef union {
     uint8_t raw[DW3000_REG_1_DMA_CFG_LEN]; 
 } dw3000_reg_dma_cfg_t;
 
+typedef union {
+    struct {
+        uint8_t aes_start:1; //Bit 0
+        uint8_t :7;          //Bits 1-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_1_AES_START_LEN];
+} dw3000_reg_aes_start_t;
+
+typedef union {
+    struct {
+        uint8_t aes_done:1;     //Bit 0
+        uint8_t auth_err:1;     //Bit 1
+        uint8_t trans_err:1;    //Bit 2
+        uint8_t mem_conf:1;     //Bit 3
+        uint8_t ram_empty:1;    //Bit 4
+        uint8_t ram_full:1;     //Bit 5
+        uint8_t :2;             //Bits 6-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_1_AES_STS_LEN];
+} dw3000_reg_aes_sts_t;
+
+typedef uint8_t dw3000_reg_aes_key_t[DW3000_REG_1_AES_KEY_LEN];
+
+
+typedef union {
+    struct {
+        uint8_t cps_len:8; // Bits 0-7
+        uint8_t :8;        // Bits 8-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_2_STS_CFG_LEN];
+} dw3000_reg_sts_cfg_t;
+
+typedef union {
+    struct {
+        uint8_t load_iv:1;  // Bit 0
+        uint8_t rst_last:1; // Bit 1
+        uint8_t :6;         // Bits 2-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_2_STS_CTRL_LEN];
+} dw3000_reg_sts_ctrl_t;
+
+typedef union {
+    struct {
+        uint16_t acc_qual:12; // Bits 0-11
+        uint8_t :4;           // Bits 12-15 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_2_STS_STS_LEN];
+} dw3000_reg_sts_sts_t;
+
+typedef uint8_t dw3000_reg_sts_key_t[DW3000_REG_2_STS_KEY_LEN];
+
+typedef uint8_t dw3000_reg_sts_iv_t[DW3000_REG_2_STS_IV_LEN];
+
+
+
+
+
+
+
+
+
 
 
 

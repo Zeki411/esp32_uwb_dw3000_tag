@@ -113,6 +113,45 @@
 #define DW3000_REG_1_DMA_CFG_OFFSET                       0x44
 #define DW3000_REG_1_DMA_CFG_LEN                          8
 
+#define DW3000_REG_1_AES_START_OFFSET                     0x4C
+#define DW3000_REG_1_AES_START_LEN                        1
+
+#define DW3000_REG_1_AES_STS_OFFSET                       0x50
+#define DW3000_REG_1_AES_STS_LEN                          4
+
+#define DW3000_REG_1_AES_KEY_OFFSET                       0x54
+#define DW3000_REG_1_AES_KEY_LEN                          16
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x02: STS_CONFIG
+**/
+
+#define DW3000_REG_2_ADDR                                 0x02
+
+#define DW3000_REG_2_STS_CFG_OFFSET                       0x00
+#define DW3000_REG_2_STS_CFG_LEN                          2
+
+#define DW3000_REG_2_STS_CTRL_OFFSET                      0x04
+#define DW3000_REG_2_STS_CTRL_LEN                         1
+
+#define DW3000_REG_2_STS_STS_OFFSET                       0x08
+#define DW3000_REG_2_STS_STS_LEN                          2
+
+#define DW3000_REG_2_STS_KEY_OFFSET                       0x0C
+#define DW3000_REG_2_STS_KEY_LEN                          16
+
+#define DW3000_REG_2_STS_IV_OFFSET                        0x1C
+#define DW3000_REG_2_STS_IV_LEN                           16
+
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x03: RX_TUNE
+**/
+
+
+
+
+
 
 
 
