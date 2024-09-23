@@ -713,9 +713,45 @@
 //TODO: Add GPIO control registers
 
 /******************************************************************************
-* @brief Bit definitions for register page 0x05 : GPIO_CTRL
-* @note  General Purpose Input-Output control registers
+* @brief Bit definitions for register page 0x06 : DRX_CONF
+* @note  Digital receiver configuration
 **/
+#define DW3000_REG_6_ADDR                                   0x06
+
+/* Register: DTUNE (0x00) */
+#define DW3000_REG_6_DTUNE_OFFSET                           0x00
+#define DW3000_REG_6_DTUNE_BYTE_LEN                         (2U)
+/* Fields */
+#define DW3000_REG_6_DTUNE_PAC_BIT_OFFSET                   (0U)
+#define DW3000_REG_6_DTUNE_PAC_BIT_MASK                     (0x3U)
+#define DW3000_REG_6_DTUNE_DT0B4_BIT_OFFSET                 (4U)
+#define DW3000_REG_6_DTUNE_DT0B4_BIT_MASK                   (0x10U)
+
+/* Register: RX_SFD_TOC (0x02) */
+#define DW3000_REG_6_RX_SFD_TOC_OFFSET                      0x02
+#define DW3000_REG_6_RX_SFD_TOC_BYTE_LEN                    (2U)
+
+/* Register: PRE_TOC (0x04) */
+#define DW3000_REG_6_PRE_TOC_OFFSET                         0x04
+#define DW3000_REG_6_PRE_TOC_BYTE_LEN                       (2U)
+
+/* Register: DTUNE3 (0x0C) */
+#define DW3000_REG_6_DTUNE3_OFFSET                          0x0C
+#define DW3000_REG_6_DTUNE3_BYTE_LEN                        (4U)
+
+/* Register: DTUNE_5 (0x14) */
+#define DW3000_REG_6_DTUNE_5_OFFSET                         0x14
+#define DW3000_REG_6_DTUNE_5_BYTE_LEN                       (4U)
+
+/* Register: DRX_CAR_INT (0x29) */
+#define DW3000_REG_6_DRX_CAR_INT_OFFSET                     0x29
+#define DW3000_REG_6_DRX_CAR_INT_BYTE_LEN                   (3U)
+
+
+
+
+
+
 
 
 
