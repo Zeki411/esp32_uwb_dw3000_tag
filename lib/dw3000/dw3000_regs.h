@@ -306,8 +306,31 @@
 #define DW3000_REG_7_LDO_TUNE_OFFSET                      0x40
 #define DW3000_REG_7_LDO_TUNE_LEN                         8
 
+#define DW3000_REG_7_LDO_CTRL_OFFSET                      0x48
+#define DW3000_REG_7_LDO_CTRL_LEN                         4
+
+#define DW3000_REG_7_LDO_RLOAD_OFFSET                     0x51
+#define DW3000_REG_7_LDO_RLOAD_LEN                        1
 
 
+/******************************************************************************
+ * @brief Bit definitions for register page 0x08: TX_CAL
+ * @brief Transmitter calibration block
+**/
+
+#define DW3000_REG_8_ADDR                                 0x08
+
+#define DW3000_REG_8_SAR_CTRL_OFFSET                      0x00
+#define DW3000_REG_8_SAR_CTRL_LEN                         1
+
+#define DW3000_REG_8_SAR_STATUS_OFFSET                    0x04
+#define DW3000_REG_8_SAR_STATUS_LEN                       1
+
+#define DW3000_REG_8_SAR_READING_OFFSET                   0x08
+#define DW3000_REG_8_SAR_READING_LEN                      3
+
+#define DW3000_REG_8_SAR_WAKE_RD_OFFSET                   0x0C
+#define DW3000_REG_8_SAR_WAKE_RD_LEN                      2
 
 
 

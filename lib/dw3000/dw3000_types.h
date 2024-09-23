@@ -830,6 +830,57 @@ typedef union {
     uint8_t raw[DW3000_REG_7_LDO_TUNE_LEN];
 } dw3000_reg_ldo_tune_t;
 
+typedef uint8_t dw3000_reg_ldo_ctrl_t[DW3000_REG_7_LDO_CTRL_LEN];
+
+typedef uint8_t dw3000_reg_ldo_rload_t[DW3000_REG_7_LDO_RLOAD_LEN];
+
+
+/******************************************************************************
+ * @brief Bit definitions for register page 0x08: TX_CAL
+ * @brief Transmitter calibration block
+**/
+
+typedef union {
+    struct {
+        uint8_t sar_start:1; // Bit 0
+        uint8_t :7;          // Bits 1-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_8_SAR_CTRL_LEN];
+} dw3000_reg_sar_ctrl_t;
+
+typedef union {
+    struct {
+        uint8_t sar_done:1; // Bit 0
+        uint8_t :7;         // Bits 1-7 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_8_SAR_STATUS_LEN];
+} dw3000_reg_sar_status_t;
+
+typedef union {
+    struct {
+        uint8_t sar_lvbat:8; // Bits 0-7
+        uint8_t sar_ltemp:8; // Bits 8-15
+        uint8_t :8;          // Bits 16-23 (Reserved)
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_8_SAR_READING_LEN];
+} dw3000_reg_sar_reading_t;
+
+typedef union {
+    struct {
+        uint8_t sar_wvbat:8; // Bits 0-7
+        uint8_t sar_wtemp:8; // Bits 8-15
+    } __attribute__((packed)) fields;
+    uint8_t raw[DW3000_REG_8_SAR_WAKE_RD_LEN];
+} dw3000_reg_sar_wake_rd_t;
+
+
+
+
+
+
+
+
+
 
 
 
