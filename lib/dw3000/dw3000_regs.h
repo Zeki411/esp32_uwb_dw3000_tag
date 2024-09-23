@@ -578,9 +578,93 @@
 #define DW3000_REG_2_ADDR                                 0x02
 
 /* Register: STS_CFG (0x00) */
+#define DW3000_REG_2_STS_CFG_OFFSET                         0x00
+#define DW3000_REG_2_STS_CFG_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_2_STS_CFG_STS_CPS_LEN_BIT_OFFSET         (0U)
+#define DW3000_REG_2_STS_CFG_STS_CPS_LEN_BIT_MASK           (0xFFU)
 
+/* Register: STS_CTRL (0x04) */
+#define DW3000_REG_2_STS_CTRL_OFFSET                        0x04
+#define DW3000_REG_2_STS_CTRL_BYTE_LEN                      (1U)
+/* Fields */
+#define DW3000_REG_2_STS_CTRL_STS_LOAD_IV_BIT_OFFSET        (0U)
+#define DW3000_REG_2_STS_CTRL_STS_LOAD_IV_BIT_MASK          (0x1U)
+#define DW3000_REG_2_STS_CTRL_STS_RST_LAST_BIT_OFFSET       (1U)
+#define DW3000_REG_2_STS_CTRL_STS_RST_LAST_BIT_MASK         (0x2U)
 
+/* Register: STS_STS (0x08) */
+#define DW3000_REG_2_STS_STS_OFFSET                         0x08
+#define DW3000_REG_2_STS_STS_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_2_STS_STS_ACC_QUAL_BIT_OFFSET            (0U)
+#define DW3000_REG_2_STS_STS_ACC_QUAL_BIT_MASK              (0xFFFU)
 
+/* Register: STS_KEY (0x0C) */
+#define DW3000_REG_2_STS_KEY_OFFSET                         0x0C
+#define DW3000_REG_2_STS_KEY_BYTE_LEN                       (16U)
+
+/* Register: STS_IV (0x1C) */
+#define DW3000_REG_2_STS_IV_OFFSET                          0x1C
+#define DW3000_REG_2_STS_IV_BYTE_LEN                        (16U)
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x03 : RX_TUNE
+* @note  Receiver tuning parameters
+**/
+#define DW3000_REG_3_ADDR                                   0x03
+
+/* Register: DGC_CFG (0x00) */
+#define DW3000_REG_3_DGC_CFG_OFFSET                         0x00
+#define DW3000_REG_3_DGC_CFG_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_3_DGC_CFG_RX_TUNE_EN_BIT_OFFSET          (0U)
+#define DW3000_REG_3_DGC_CFG_RX_TUNE_EN_BIT_MASK            (0x1U)
+#define DW3000_REG_3_DGC_CFG_THR_64_BIT_OFFSET              (9U)
+#define DW3000_REG_3_DGC_CFG_THR_64_BIT_MASK                (0x7E00U)
+
+/* Register: DGC_CFG0 (0x1C) */
+#define DW3000_REG_3_DGC_CFG0_OFFSET                        0x1C
+#define DW3000_REG_3_DGC_CFG0_BYTE_LEN                      (4U)
+
+/* Register: DGC_CFG1 (0x20) */
+#define DW3000_REG_3_DGC_CFG1_OFFSET                        0x20
+#define DW3000_REG_3_DGC_CFG1_BYTE_LEN                      (4U)
+
+/* Register: DGC_LUT_0 (0x38) */
+#define DW3000_REG_3_DGC_LUT_0_OFFSET                       0x38
+#define DW3000_REG_3_DGC_LUT_0_BYTE_LEN                     (4U)
+
+/* Register: DGC_LUT_1 (0x3C) */
+#define DW3000_REG_3_DGC_LUT_1_OFFSET                       0x3C
+#define DW3000_REG_3_DGC_LUT_1_BYTE_LEN                     (4U)
+
+/* Register: DGC_LUT_2 (0x40) */
+#define DW3000_REG_3_DGC_LUT_2_OFFSET                       0x40
+#define DW3000_REG_3_DGC_LUT_2_BYTE_LEN                     (4U)
+
+/* Register: DGC_LUT_3 (0x44) */
+#define DW3000_REG_3_DGC_LUT_3_OFFSET                       0x44
+#define DW3000_REG_3_DGC_LUT_3_BYTE_LEN                     (4U)
+
+/* Register: DGC_LUT_4 (0x48) */
+#define DW3000_REG_3_DGC_LUT_4_OFFSET                       0x48
+#define DW3000_REG_3_DGC_LUT_4_BYTE_LEN                     (4U)
+
+/* Register: DGC_LUT_5 (0x4C) */
+#define DW3000_REG_3_DGC_LUT_5_OFFSET                       0x4C
+#define DW3000_REG_3_DGC_LUT_5_BYTE_LEN                     (4U)
+
+/* Register: DGC_LUT_6 (0x50) */
+#define DW3000_REG_3_DGC_LUT_6_OFFSET                       0x50
+#define DW3000_REG_3_DGC_LUT_6_BYTE_LEN                     (4U)
+
+/* Register: DGC_DBG (0x60) */
+#define DW3000_REG_3_DGC_DBG_OFFSET                         0x60
+#define DW3000_REG_3_DGC_DBG_BYTE_LEN                       (4U)
+/* Fields */
+#define DW3000_REG_3_DGC_DBG_DGC_DECISION_BIT_OFFSET        (28U)
+#define DW3000_REG_3_DGC_DBG_DGC_DECISION_BIT_MASK          (0x70000000U)
 
 
 
