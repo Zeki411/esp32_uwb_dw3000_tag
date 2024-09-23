@@ -666,6 +666,56 @@
 #define DW3000_REG_3_DGC_DBG_DGC_DECISION_BIT_OFFSET        (28U)
 #define DW3000_REG_3_DGC_DBG_DGC_DECISION_BIT_MASK          (0x70000000U)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x04 : EXT_SYNC
+* @note  External synchronisation control and RX calibration
+**/
+#define DW3000_REG_4_ADDR                                   0x04
+
+/* Register: EC_CTRL (0x00) */
+#define DW3000_REG_4_EC_CTRL_OFFSET                         0x00
+#define DW3000_REG_4_EC_CTRL_BYTE_LEN                       (4U)
+/* Fields */
+#define DW3000_REG_4_EC_CTRL_OSTS_WAIT_BIT_OFFSET           (3U)
+#define DW3000_REG_4_EC_CTRL_OSTS_WAIT_BIT_MASK             (0x7F8U)
+#define DW3000_REG_4_EC_CTRL_OSTR_MODE_BIT_OFFSET           (11U)
+#define DW3000_REG_4_EC_CTRL_OSTR_MODE_BIT_MASK             (0x800U)
+
+/* Register: RX_CAL (0x0C) */
+#define DW3000_REG_4_RX_CAL_OFFSET                          0x0C
+#define DW3000_REG_4_RX_CAL_BYTE_LEN                        (4U)
+/* Fields */
+#define DW3000_REG_4_RX_CAL_CAL_MODE_BIT_OFFSET             (0U)
+#define DW3000_REG_4_RX_CAL_CAL_MODE_BIT_MASK               (0x3U)
+#define DW3000_REG_4_RX_CAL_CAL_EN_BIT_OFFSET               (4U)
+#define DW3000_REG_4_RX_CAL_CAL_EN_BIT_MASK                 (0x10U)
+#define DW3000_REG_4_RX_CAL_COMP_DLY_BIT_OFFSET             (16U)
+#define DW3000_REG_4_RX_CAL_COMP_DLY_BIT_MASK               (0xF0000U)
+
+/* Register: RX_CAL_RESI (0x14) */
+#define DW3000_REG_4_RX_CAL_RESI_OFFSET                     0x14
+#define DW3000_REG_4_RX_CAL_RESI_BYTE_LEN                   (4U)
+
+/* Register: RX_CAL_RESQ (0x1C) */
+#define DW3000_REG_4_RX_CAL_RESQ_OFFSET                     0x1C
+#define DW3000_REG_4_RX_CAL_RESQ_BYTE_LEN                   (4U)
+
+/* Register: RX_CAL_STS (0x20) */
+#define DW3000_REG_4_RX_CAL_STS_OFFSET                      0x20
+#define DW3000_REG_4_RX_CAL_STS_BYTE_LEN                    (1U)
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x05 : GPIO_CTRL
+* @note  General Purpose Input-Output control registers
+**/
+#define DW3000_REG_5_ADDR                                   0x05
+
+//TODO: Add GPIO control registers
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x05 : GPIO_CTRL
+* @note  General Purpose Input-Output control registers
+**/
 
 
 
