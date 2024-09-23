@@ -251,8 +251,333 @@
 // P0
 #define DW3000_REG_0_SYS_STATUS_P0_IRQS_BIT_OFFSET         (0U)
 #define DW3000_REG_0_SYS_STATUS_P0_IRQS_BIT_MASK           (0x1U)
+#define DW3000_REG_0_SYS_STATUS_P0_CPLOCK_BIT_OFFSET       (1U)
+#define DW3000_REG_0_SYS_STATUS_P0_CPLOCK_BIT_MASK         (0x2U)
+#define DW3000_REG_0_SYS_STATUS_P0_SPICRCE_BIT_OFFSET      (2U)
+#define DW3000_REG_0_SYS_STATUS_P0_SPICRCE_BIT_MASK        (0x4U)
+#define DW3000_REG_0_SYS_STATUS_P0_AAT_BIT_OFFSET          (3U)
+#define DW3000_REG_0_SYS_STATUS_P0_AAT_BIT_MASK            (0x8U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXFRB_BIT_OFFSET        (4U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXFRB_BIT_MASK          (0x10U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXPRS_BIT_OFFSET        (5U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXPRS_BIT_MASK          (0x20U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXPHS_BIT_OFFSET        (6U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXPHS_BIT_MASK          (0x40U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXFRS_BIT_OFFSET        (7U)
+#define DW3000_REG_0_SYS_STATUS_P0_TXFRS_BIT_MASK          (0x80U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPRD_BIT_OFFSET        (8U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPRD_BIT_MASK          (0x100U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXSFDD_BIT_OFFSET       (9U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXSFDD_BIT_MASK         (0x200U)
+#define DW3000_REG_0_SYS_STATUS_P0_CIADONE_BIT_OFFSET      (10U)
+#define DW3000_REG_0_SYS_STATUS_P0_CIADONE_BIT_MASK        (0x400U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPHD_BIT_OFFSET        (11U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPHD_BIT_MASK          (0x800U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPHE_BIT_OFFSET        (12U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPHE_BIT_MASK          (0x1000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFR_BIT_OFFSET         (13U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFR_BIT_MASK           (0x2000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFCG_BIT_OFFSET        (14U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFCG_BIT_MASK          (0x4000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFCE_BIT_OFFSET        (15U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFCE_BIT_MASK          (0x8000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXRFSL_BIT_OFFSET       (16U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXRFSL_BIT_MASK         (0x10000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFTO_BIT_OFFSET        (17U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXFTO_BIT_MASK          (0x20000U)
+#define DW3000_REG_0_SYS_STATUS_P0_CIAERR_BIT_OFFSET       (18U)
+#define DW3000_REG_0_SYS_STATUS_P0_CIAERR_BIT_MASK         (0x40000U)
+#define DW3000_REG_0_SYS_STATUS_P0_VWARN_BIT_OFFSET        (19U)
+#define DW3000_REG_0_SYS_STATUS_P0_VWARN_BIT_MASK          (0x80000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXOVRR_BIT_OFFSET       (20U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXOVRR_BIT_MASK         (0x100000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPTO_BIT_OFFSET        (21U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXPTO_BIT_MASK          (0x200000U)
+#define DW3000_REG_0_SYS_STATUS_P0_SPIRDY_BIT_OFFSET       (23U)
+#define DW3000_REG_0_SYS_STATUS_P0_SPIRDY_BIT_MASK         (0x800000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RCINIT_BIT_OFFSET       (24U)
+#define DW3000_REG_0_SYS_STATUS_P0_RCINIT_BIT_MASK         (0x1000000U)
+#define DW3000_REG_0_SYS_STATUS_P0_PLLHILO_BIT_OFFSET      (25U)
+#define DW3000_REG_0_SYS_STATUS_P0_PLLHILO_BIT_MASK        (0x2000000U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXSTO_BIT_OFFSET        (26U)
+#define DW3000_REG_0_SYS_STATUS_P0_RXSTO_BIT_MASK          (0x4000000U)
+#define DW3000_REG_0_SYS_STATUS_P0_HPDWARN_BIT_OFFSET      (27U)
+#define DW3000_REG_0_SYS_STATUS_P0_HPDWARN_BIT_MASK        (0x8000000U)
+#define DW3000_REG_0_SYS_STATUS_P0_CPERR_BIT_OFFSET        (28U)
+#define DW3000_REG_0_SYS_STATUS_P0_CPERR_BIT_MASK          (0x10000000U)
+#define DW3000_REG_0_SYS_STATUS_P0_ARFE_BIT_OFFSET         (29U)
+#define DW3000_REG_0_SYS_STATUS_P0_ARFE_BIT_MASK           (0x20000000U)
+// P1
+#define DW3000_REG_0_SYS_STATUS_P1_RXPREJ_BIT_OFFSET       (1U)
+#define DW3000_REG_0_SYS_STATUS_P1_RXPREJ_BIT_MASK         (0x2U)
+#define DW3000_REG_0_SYS_STATUS_P1_VT_DET_BIT_OFFSET       (4U)
+#define DW3000_REG_0_SYS_STATUS_P1_VT_DET_BIT_MASK         (0x10U)
+#define DW3000_REG_0_SYS_STATUS_P1_GPIOIRQ_BIT_OFFSET      (5U)
+#define DW3000_REG_0_SYS_STATUS_P1_GPIOIRQ_BIT_MASK        (0x20U)
+#define DW3000_REG_0_SYS_STATUS_P1_AES_DONE_BIT_OFFSET     (6U)
+#define DW3000_REG_0_SYS_STATUS_P1_AES_DONE_BIT_MASK       (0x40U)
+#define DW3000_REG_0_SYS_STATUS_P1_AES_ERR_BIT_OFFSET      (7U)
+#define DW3000_REG_0_SYS_STATUS_P1_AES_ERR_BIT_MASK        (0x80U)
+#define DW3000_REG_0_SYS_STATUS_P1_CMD_ERR_BIT_OFFSET      (8U)
+#define DW3000_REG_0_SYS_STATUS_P1_CMD_ERR_BIT_MASK        (0x100U)
+#define DW3000_REG_0_SYS_STATUS_P1_SPI_OVR_BIT_OFFSET      (9U)
+#define DW3000_REG_0_SYS_STATUS_P1_SPI_OVR_BIT_MASK        (0x200U)
+#define DW3000_REG_0_SYS_STATUS_P1_SPI_UNF_BIT_OFFSET      (10U)
+#define DW3000_REG_0_SYS_STATUS_P1_SPI_UNF_BIT_MASK        (0x400U)
+#define DW3000_REG_0_SYS_STATUS_P1_SPIERR_BIT_OFFSET       (11U)
+#define DW3000_REG_0_SYS_STATUS_P1_SPIERR_BIT_MASK         (0x800U)
+#define DW3000_REG_0_SYS_STATUS_P1_CCA_FAIL_BIT_OFFSET     (12U)
+#define DW3000_REG_0_SYS_STATUS_P1_CCA_FAIL_BIT_MASK       (0x1000U)
 
+/* Register: RX_FINFO (0x4C) */
+#define DW3000_REG_0_RX_FINFO_OFFSET                        0x4C
+#define DW3000_REG_0_RX_FINFO_BYTE_LEN                      (4U)
+/* Fields */
+#define DW3000_REG_0_RX_FINFO_RXFLEN_BIT_OFFSET             (0U)
+#define DW3000_REG_0_RX_FINFO_RXFLEN_BIT_MASK               (0x3FFU)
+#define DW3000_REG_0_RX_FINFO_RXNSPL_BIT_OFFSET             (11U)
+#define DW3000_REG_0_RX_FINFO_RXNSPL_BIT_MASK               (0x1800U)
+#define DW3000_REG_0_RX_FINFO_RXBR_BIT_OFFSET               (13U)
+#define DW3000_REG_0_RX_FINFO_RXBR_BIT_MASK                 (0x2000U)
+#define DW3000_REG_0_RX_FINFO_RNG_BIT_OFFSET                (15U)
+#define DW3000_REG_0_RX_FINFO_RNG_BIT_MASK                  (0x8000U)
+#define DW3000_REG_0_RX_FINFO_RXPRF_BIT_OFFSET              (16U)
+#define DW3000_REG_0_RX_FINFO_RXPRF_BIT_MASK                (0x30000U)
+#define DW3000_REG_0_RX_FINFO_RXPSR_BIT_OFFSET              (18U)
+#define DW3000_REG_0_RX_FINFO_RXPSR_BIT_MASK                (0xC0000U)
+#define DW3000_REG_0_RX_FINFO_RXPACC_BIT_OFFSET             (20U)
+#define DW3000_REG_0_RX_FINFO_RXPACC_BIT_MASK               (0xFFF00000U)
 
+/* Register: RX_TIME (0x64) */
+#define DW3000_REG_0_RX_TIME_OFFSET                         0x64
+#define DW3000_REG_0_RX_TIME_BYTE_LEN                       (16U)
+#define DW3000_REG_0_RX_TIME_P0_BYTE_OFFSET                 (0U)
+#define DW3000_REG_0_RX_TIME_P1_BYTE_OFFSET                 (4U)
+#define DW3000_REG_0_RX_TIME_P2_BYTE_OFFSET                 (8U)
+/* Fields */
+// P0
+#define DW3000_REG_0_RX_TIME_P0_RX_STAMP_BIT_OFFSET         (0U)
+#define DW3000_REG_0_RX_TIME_P0_RX_STAMP_BIT_MASK           (0xFFFFFFFFUL)
+// P1
+#define DW3000_REG_0_RX_TIME_P1_RX_STAMP_BIT_OFFSET         (0U)
+#define DW3000_REG_0_RX_TIME_P1_RX_STAMP_BIT_MASK           (0xFFU)
+// P2
+#define DW3000_REG_0_RX_TIME_P2_RX_RAWST_BIT_OFFSET         (0U)
+#define DW3000_REG_0_RX_TIME_P2_RX_RAWST_BIT_MASK           (0xFFFFFFFFUL)
+
+/* Register: TX_TIME (0x74) */
+#define DW3000_REG_0_TX_TIME_OFFSET                         0x74
+#define DW3000_REG_0_TX_TIME_BYTE_LEN                       (5U)
+#define DW3000_REG_0_TX_TIME_P0_BYTE_OFFSET                 (0U)
+#define DW3000_REG_0_TX_TIME_P1_BYTE_OFFSET                 (4U)
+/* Fields */
+// P0
+#define DW3000_REG_0_TX_TIME_P0_TX_STAMP_BIT_OFFSET         (0U)
+#define DW3000_REG_0_TX_TIME_P0_TX_STAMP_BIT_MASK           (0xFFFFFFFFUL)
+// P1
+#define DW3000_REG_0_TX_TIME_P1_TX_STAMP_BIT_OFFSET         (0U)
+#define DW3000_REG_0_TX_TIME_P1_TX_STAMP_BIT_MASK           (0xFFU)
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x01 : GEN_CFG_AES HIGH
+**/
+#define DW3000_REG_1_ADDR                                 0x01
+
+/* Register: TX_RAWST (0x00) */
+#define DW3000_REG_1_TX_RAWST_OFFSET                        0x00
+#define DW3000_REG_1_TX_RAWST_BYTE_LEN                      (4U)
+
+/* Register: TX_ANTD (0x04) */
+#define DW3000_REG_1_TX_ANTD_OFFSET                         0x04
+#define DW3000_REG_1_TX_ANTD_BYTE_LEN                       (2U)
+
+/* Register: ACK_RESP_T (0x08) */
+#define DW3000_REG_1_ACK_RESP_T_OFFSET                      0x08
+#define DW3000_REG_1_ACK_RESP_T_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_1_ACK_RESP_T_W4R_TIM_BIT_OFFSET          (0U)
+#define DW3000_REG_1_ACK_RESP_T_W4R_TIM_BIT_MASK            (0xFFFFFU)
+#define DW3000_REG_1_ACK_RESP_T_ACK_TIM_BIT_OFFSET          (24U)
+#define DW3000_REG_1_ACK_RESP_T_ACK_TIM_BIT_MASK            (0xFF000000U)
+
+/* Register: TX_POWER (0x0C) */
+#define DW3000_REG_1_TX_POWER_OFFSET                        0x0C
+#define DW3000_REG_1_TX_POWER_BYTE_LEN                      (4U)
+/* Fields */
+#define DW3000_REG_1_TX_POWER_DATA_PWR_BIT_OFFSET           (0U)
+#define DW3000_REG_1_TX_POWER_DATA_PWR_BIT_MASK             (0xFFU)
+#define DW3000_REG_1_TX_POWER_PHR_PWR_BIT_OFFSET            (8U)
+#define DW3000_REG_1_TX_POWER_PHR_PWR_BIT_MASK              (0xFF00U)
+#define DW3000_REG_1_TX_POWER_SHR_PWR_BIT_OFFSET            (16U)
+#define DW3000_REG_1_TX_POWER_SHR_PWR_BIT_MASK              (0xFF0000U)
+#define DW3000_REG_1_TX_POWER_STS_PWR_BIT_OFFSET            (24U)
+#define DW3000_REG_1_TX_POWER_STS_PWR_BIT_MASK              (0xFF000000U)
+
+/* Register: CHAN_CTRL (0x14) */
+#define DW3000_REG_1_CHAN_CTRL_OFFSET                       0x14
+#define DW3000_REG_1_CHAN_CTRL_BYTE_LEN                     (2U)
+/* Fields */
+#define DW3000_REG_1_CHAN_CTRL_RF_CHAN_BIT_OFFSET           (0U)
+#define DW3000_REG_1_CHAN_CTRL_RF_CHAN_BIT_MASK             (0x1U)
+#define DW3000_REG_1_CHAN_CTRL_SFD_TYPE_BIT_OFFSET          (1U)
+#define DW3000_REG_1_CHAN_CTRL_SFD_TYPE_BIT_MASK            (0x6U)
+#define DW3000_REG_1_CHAN_CTRL_TX_PCODE_OFFSET              (3U)
+#define DW3000_REG_1_CHAN_CTRL_TX_PCODE_BIT_MASK            (0xF8U)
+#define DW3000_REG_1_CHAN_CTRL_RX_PCODE_OFFSET              (8U)
+#define DW3000_REG_1_CHAN_CTRL_RX_PCODE_BIT_MASK            (0x1F00U)
+
+/* Register: LE_PEND_01 (0x18) */
+#define DW3000_REG_1_LE_PEND_01_OFFSET                      0x18
+#define DW3000_REG_1_LE_PEND_01_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_1_LE_PEND_01_LE_ADDR0_BIT_OFFSET         (0U)
+#define DW3000_REG_1_LE_PEND_01_LE_ADDR0_BIT_MASK           (0xFFFFU)
+#define DW3000_REG_1_LE_PEND_01_LE_ADDR1_BIT_OFFSET         (16U)
+#define DW3000_REG_1_LE_PEND_01_LE_ADDR1_BIT_MASK           (0xFFFF0000UL)
+
+/* Register: LE_PEND_23 (0x1C) */
+#define DW3000_REG_1_LE_PEND_23_OFFSET                      0x1C
+#define DW3000_REG_1_LE_PEND_23_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_1_LE_PEND_23_LE_ADDR2_BIT_OFFSET         (0U)
+#define DW3000_REG_1_LE_PEND_23_LE_ADDR2_BIT_MASK           (0xFFFFU)
+#define DW3000_REG_1_LE_PEND_23_LE_ADDR3_BIT_OFFSET         (16U)
+#define DW3000_REG_1_LE_PEND_23_LE_ADDR3_BIT_MASK           (0xFFFF0000UL)
+
+/* Register: SPI_COLLISION (0x20) */
+#define DW3000_REG_1_SPI_COLLISION_OFFSET                   0x20
+#define DW3000_REG_1_SPI_COLLISION_BYTE_LEN                 (1U)
+/* Fields */
+#define DW3000_REG_1_SPI_COLLISION_SPI_COLLISION_BIT_OFFSET (0U)
+#define DW3000_REG_1_SPI_COLLISION_SPI_COLLISION_BIT_MASK   (0x1FU)
+
+/* Register: RDB_STATUS (0x24) */
+#define DW3000_REG_1_RDB_STATUS_OFFSET                      0x24
+#define DW3000_REG_1_RDB_STATUS_BYTE_LEN                    (1U)
+/* Fields */
+#define DW3000_REG_1_RDB_STATUS_RXFCG0_BIT_OFFSET           (0U)
+#define DW3000_REG_1_RDB_STATUS_RXFCG0_BIT_MASK             (0x1U)
+#define DW3000_REG_1_RDB_STATUS_RXFR0_BIT_OFFSET            (1U)
+#define DW3000_REG_1_RDB_STATUS_RXFR0_BIT_MASK              (0x2U)
+#define DW3000_REG_1_RDB_STATUS_CIADONE0_BIT_OFFSET         (2U)
+#define DW3000_REG_1_RDB_STATUS_CIADONE0_BIT_MASK           (0x4U)
+#define DW3000_REG_1_RDB_STATUS_CP_ERR0_BIT_OFFSET          (3U)
+#define DW3000_REG_1_RDB_STATUS_CP_ERR0_BIT_MASK            (0x8U)
+#define DW3000_REG_1_RDB_STATUS_RXFCG1_BIT_OFFSET           (4U)
+#define DW3000_REG_1_RDB_STATUS_RXFCG1_BIT_MASK             (0x10U)
+#define DW3000_REG_1_RDB_STATUS_RXFR1_BIT_OFFSET            (5U)
+#define DW3000_REG_1_RDB_STATUS_RXFR1_BIT_MASK              (0x20U)
+#define DW3000_REG_1_RDB_STATUS_CIADONE1_BIT_OFFSET         (6U)
+#define DW3000_REG_1_RDB_STATUS_CIADONE1_BIT_MASK           (0x40U)
+#define DW3000_REG_1_RDB_STATUS_CP_ERR1_BIT_OFFSET          (7U)
+#define DW3000_REG_1_RDB_STATUS_CP_ERR1_BIT_MASK            (0x80U)
+
+/* Register: RDB_DIAG (0x28) */
+#define DW3000_REG_1_RDB_DIAG_OFFSET                        0x28
+#define DW3000_REG_1_RDB_DIAG_BYTE_LEN                      (1U)
+/* Fields */
+#define DW3000_REG_1_RDB_DIAG_RDB_DMODE_BIT_OFFSET          (0U)
+#define DW3000_REG_1_RDB_DIAG_RDB_DMODE_BIT_MASK            (0x3U)
+
+/* Register: AES_CFG (0x30) */
+#define DW3000_REG_1_AES_CFG_OFFSET                         0x30
+#define DW3000_REG_1_AES_CFG_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_1_AES_CFG_MODE_BIT_OFFSET                (0U)
+#define DW3000_REG_1_AES_CFG_MODE_BIT_MASK                  (0x1U)
+#define DW3000_REG_1_AES_CFG_KEY_SIZE_BIT_OFFSET            (1U)
+#define DW3000_REG_1_AES_CFG_KEY_SIZE_BIT_MASK              (0x6U)
+#define DW3000_REG_1_AES_CFG_KEY_ADDR_BIT_OFFSET            (3U)
+#define DW3000_REG_1_AES_CFG_KEY_ADDR_BIT_MASK              (0x38U)
+#define DW3000_REG_1_AES_CFG_KEY_LOAD_BIT_OFFSET            (6U)
+#define DW3000_REG_1_AES_CFG_KEY_LOAD_BIT_MASK              (0x40U)
+#define DW3000_REG_1_AES_CFG_KEY_SRC_BIT_OFFSET             (7U)
+#define DW3000_REG_1_AES_CFG_KEY_SRC_BIT_MASK               (0x80U)
+#define DW3000_REG_1_AES_CFG_TAG_SIZE_BIT_OFFSET            (8U)
+#define DW3000_REG_1_AES_CFG_TAG_SIZE_BIT_MASK              (0x700U)
+#define DW3000_REG_1_AES_CFG_CORE_SEL_BIT_OFFSET            (11U)
+#define DW3000_REG_1_AES_CFG_CORE_SEL_BIT_MASK              (0x800U)
+#define DW3000_REG_1_AES_CFG_KEY_OTP_BIT_OFFSET             (12U)
+#define DW3000_REG_1_AES_CFG_KEY_OTP_BIT_MASK               (0x1000U)
+
+/* Register: AES_IV0 (0x34) */
+#define DW3000_REG_1_AES_IV0_OFFSET                         0x34
+#define DW3000_REG_1_AES_IV0_BYTE_LEN                       (4U)
+
+/* Register: AES_IV1 (0x38) */
+#define DW3000_REG_1_AES_IV1_OFFSET                         0x38
+#define DW3000_REG_1_AES_IV1_BYTE_LEN                       (4U)
+
+/* Register: AES_IV2 (0x3C) */
+#define DW3000_REG_1_AES_IV2_OFFSET                         0x3C
+#define DW3000_REG_1_AES_IV2_BYTE_LEN                       (4U)
+
+/* Register: AES_IV3 (0x40) */
+#define DW3000_REG_1_AES_IV3_OFFSET                         0x40
+#define DW3000_REG_1_AES_IV3_BYTE_LEN                       (2U)
+
+/* Register: AES_IV4 (0x42) */
+#define DW3000_REG_1_AES_IV4_OFFSET                         0x42
+#define DW3000_REG_1_AES_IV4_BYTE_LEN                       (2U)
+
+/* Register: DMA_CFG (0x44) */
+#define DW3000_REG_1_DMA_CFG_OFFSET                         0x44
+#define DW3000_REG_1_DMA_CFG_BYTE_LEN                       (8U)
+#define DW3000_REG_1_DMA_CFG_P0_BYTE_OFFSET                 (0U)
+#define DW3000_REG_1_DMA_CFG_P1_BYTE_OFFSET                 (4U)
+/* Fields */
+// P0
+#define DW3000_REG_1_P0_DMA_CFG_SRC_PORT_BIT_OFFSET         (0U)
+#define DW3000_REG_1_P0_DMA_CFG_SRC_PORT_BIT_MASK           (0x7U)          
+#define DW3000_REG_1_P0_DMA_CFG_SRC_ADDR_BIT_OFFSET         (3U)
+#define DW3000_REG_1_P0_DMA_CFG_SRC_ADDR_BIT_MASK           (0x1FF8U)       
+#define DW3000_REG_1_P0_DMA_CFG_DST_PORT_BIT_OFFSET         (13U)
+#define DW3000_REG_1_P0_DMA_CFG_DST_PORT_BIT_MASK           (0xE000U)       
+#define DW3000_REG_1_P0_DMA_CFG_DST_ADDR_BIT_OFFSET         (16U)
+#define DW3000_REG_1_P0_DMA_CFG_DST_ADDR_BIT_MASK           (0x3FF0000U)    
+#define DW3000_REG_1_P0_DMA_CFG_CP_END_SEL_BIT_OFFSET       (26U)
+#define DW3000_REG_1_P0_DMA_CFG_CP_END_SEL_BIT_MASK         (0x4000000U)    
+// P1
+#define DW3000_REG_1_P1_DMA_CFG_HDR_SIZE_BIT_OFFSET         (0U)
+#define DW3000_REG_1_P1_DMA_CFG_HDR_SIZE_BIT_MASK           (0x7FU)
+#define DW3000_REG_1_P1_DMA_CFG_PYLD_SIZE_BIT_OFFSET        (7U)
+#define DW3000_REG_1_P1_DMA_CFG_PYLD_SIZE_BIT_MASK          (0x1FF80U)
+
+/* Register: AES_START (0x4C) */
+#define DW3000_REG_1_AES_START_OFFSET                       0x4C
+#define DW3000_REG_1_AES_START_BYTE_LEN                     (1U)
+/* Fields */
+#define DW3000_REG_1_AES_START_AES_START_BIT_OFFSET         (0U)
+#define DW3000_REG_1_AES_START_AES_START_BIT_MASK           (0x1U)
+
+/* Register: AES_STS (0x50) */
+#define DW3000_REG_1_AES_STS_OFFSET                         0x50
+#define DW3000_REG_1_AES_STS_BYTE_LEN                       (4U)
+/* Fields */
+#define DW3000_REG_1_AES_STS_AES_DONE_BIT_OFFSET            (0U)
+#define DW3000_REG_1_AES_STS_AES_DONE_BIT_MASK              (0x1U)
+#define DW3000_REG_1_AES_STS_AUTH_ERR_BIT_OFFSET            (1U)
+#define DW3000_REG_1_AES_STS_AUTH_ERR_BIT_MASK              (0x2U)
+#define DW3000_REG_1_AES_STS_TRANS_ERR_BIT_OFFSET           (2U)
+#define DW3000_REG_1_AES_STS_TRANS_ERR_BIT_MASK             (0x4U)
+#define DW3000_REG_1_AES_STS_MEM_CONF_BIT_OFFSET            (3U)
+#define DW3000_REG_1_AES_STS_MEM_CONF_BIT_MASK              (0x8U)
+#define DW3000_REG_1_AES_STS_RAM_EMPTY_BIT_OFFSET           (4U)
+#define DW3000_REG_1_AES_STS_RAM_EMPTY_BIT_MASK             (0x10U)
+#define DW3000_REG_1_AES_STS_RAM_FULL_BIT_OFFSET            (5U)
+#define DW3000_REG_1_AES_STS_RAM_FULL_BIT_MASK              (0x20U)
+
+/* Register: AES_KEY (0x54) */
+#define DW3000_REG_1_AES_KEY_OFFSET                         0x54
+#define DW3000_REG_1_AES_KEY_BYTE_LEN                       (16U)
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x02 : STS_CONFIG
+* @note  Scrambled Timestamp Sequence configuration and status registers
+**/
+#define DW3000_REG_2_ADDR                                 0x02
+
+/* Register: STS_CFG (0x00) */
 
 
 
