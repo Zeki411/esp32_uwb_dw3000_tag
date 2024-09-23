@@ -2,24 +2,16 @@
 #define __DW3000_H__
 
 #include "dw3000_regs.h"
-#include "dw3000_types.h"
 #include "dw3000_port.h"
 
 #define DW3000_DEV_ID_VAL 0xDECA0302u
-
-// typedef struct {
-//     uint8_t pan_id[2];
-//     uint8_t short_addr[2];
-// } dw3000_network_id_t;
-
-
 
 
 
 class DW3000{
 public:
 
-    dw3000_ret_t init();
+    void init();
 
     void hard_reset();
     void get_dev_id(uint32_t *data);

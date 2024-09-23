@@ -42,7 +42,7 @@ void DW3000::write_full_address(uint8_t base_addr, uint8_t sub_addr, uint8_t *da
 }
 
 
-dw3000_ret_t DW3000::init() {
+void DW3000::init() {
     port = new DW3000Port();
     port->init();
 
@@ -55,7 +55,6 @@ dw3000_ret_t DW3000::init() {
     //     return DW3000_RET_NOT_OK;
     // }
 
-    return DW3000_RET_OK;
 }
 
 void DW3000::hard_reset() {

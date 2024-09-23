@@ -1,341 +1,256 @@
 #ifndef __DW3000_REGS_H__
 #define __DW3000_REGS_H__
 
+// Macro to extract a specific field value from a register using its mask and offset
+#define GET_FVAL(reg_val, mask, offset)       (((reg_val) & (mask)) >> (offset))
+// Macro to set a specific field value in a register using its mask and offset
+#define SET_FVAL(reg_val, mask, offset, value)  ((reg_val) = (((reg_val) & ~(mask)) | (((value) << (offset)) & (mask))))
+
 /******************************************************************************
 * @brief Bit definitions for register page 0x00 : GEN_CFG_AES LOW
 **/
 #define DW3000_REG_0_ADDR                                 0x00
 
+/* Register: DEV_ID (0x00) */
 #define DW3000_REG_0_DEV_ID_OFFSET                        0x00   
-#define DW3000_REG_0_DEV_ID_LEN                           4
+#define DW3000_REG_0_DEV_ID_BYTE_LEN                      (4U)
+/* Fields */
+#define DW3000_REG_0_DEV_ID_REV_BIT_OFFSET                (0U)
+#define DW3000_REG_0_DEV_ID_REV_BIT_MASK                  (0xFU)
+#define DW3000_REG_0_DEV_ID_VER_BIT_OFFSET                (4U)
+#define DW3000_REG_0_DEV_ID_VER_BIT_MASK                  (0xF0U)
+#define DW3000_REG_0_DEV_ID_MODEL_BIT_OFFSET              (8U)
+#define DW3000_REG_0_DEV_ID_MODEL_BIT_MASK                (0xFF00U)
+#define DW3000_REG_0_DEV_ID_RIDTAG_BIT_OFFSET             (16U)
+#define DW3000_REG_0_DEV_ID_RIDTAG_BIT_MASK               (0xFFFF0000UL)
 
+/* Register: EUI_64 (0x04) */
 #define DW3000_REG_0_EUI_64_OFFSET                        0x04
-#define DW3000_REG_0_EUI_64_LEN                           8
+#define DW3000_REG_0_EUI_64_BYTE_LEN                      (8U)
+//TODO: add more info
 
+/* Register: PANADR (0x0A) */
 #define DW3000_REG_0_PANADR_OFFSET                        0x0C
-#define DW3000_REG_0_PANADR_LEN                           4
+#define DW3000_REG_0_PANADR_BYTE_LEN                      (4U)
+/* Fields */
+#define DW3000_REG_0_PANADR_SHORT_ADDR_BIT_OFFSET         (0U)
+#define DW3000_REG_0_PANADR_SHORT_ADDR_BIT_MASK           (0xFFFFU)
+#define DW3000_REG_0_PANADR_PAN_ID_BIT_OFFSET             (16U)
+#define DW3000_REG_0_PANADR_PAN_ID_BIT_MASK               (0xFFFF0000UL)
 
+/* Register: SYS_CFG (0x0E) */
 #define DW3000_REG_0_SYS_CFG_OFFSET                       0x10
-#define DW3000_REG_0_SYS_CFG_LEN                          4
-
-#define DW3000_REG_0_FF_CFG_OFFSET                        0x14
-#define DW3000_REG_0_FF_CFG_LEN                           4
-
-#define DW3000_REG_0_SPI_RD_CRC_OFFSET                    0x18
-#define DW3000_REG_0_SPI_RD_CRC_LEN                       1
-
-#define DW3000_REG_0_SYS_TIME_OFFSET                      0x1C
-#define DW3000_REG_0_SYS_TIME_LEN                         4
-
-#define DW3000_REG_0_TX_FCTRL_OFFSET                      0x24
-#define DW3000_REG_0_TX_FCTRL_LEN                         6
-
-#define DW3000_REG_0_DX_TIME_OFFSET                       0x2C
-#define DW3000_REG_0_DX_TIME_LEN                          4
-
-#define DW3000_REG_0_DREF_TIME_OFFSET                     0x30
-#define DW3000_REG_0_DREF_TIME_LEN                        4
-
-#define DW3000_REG_0_RX_FWTO_OFFSET                       0x34
-#define DW3000_REG_0_RX_FWTO_LEN                          3
-
-#define DW3000_REG_0_SYS_CTRL_OFFSET                      0x38
-#define DW3000_REG_0_SYS_CTRL_LEN                         1
-
-#define DW3000_REG_0_SYS_ENABLE_OFFSET                    0x3C
-#define DW3000_REG_0_SYS_ENABLE_LEN                       6
-
-#define DW3000_REG_0_SYS_STATUS_OFFSET                    0x44
-#define DW3000_REG_0_SYS_STATUS_LEN                       6
-
-#define DW3000_REG_0_RX_FINFO_OFFSET                      0x4C
-#define DW3000_REG_0_RX_FINFO_LEN                         4
-
-#define DW3000_REG_0_RX_TIME_OFFSET                       0x64
-#define DW3000_REG_0_RX_TIME_LEN                          16
-
-#define DW3000_REG_0_TX_TIME_OFFSET                       0x74
-#define DW3000_REG_0_TX_TIME_LEN                          5
-
-/******************************************************************************
-* @brief Bit definitions for register page 0x01 : GEN_CFG_AES HIGH
-**/
-#define DW3000_REG_1_ADDR                                 0x01
-
-#define DW3000_REG_1_TX_RAWST_OFFSET                      0x00
-#define DW3000_REG_1_TX_RAWST_LEN                         4
-
-#define DW3000_REG_1_TX_ANTD_OFFSET                       0x04
-#define DW3000_REG_1_TX_ANTD_LEN                          2
-
-#define DW3000_REG_1_ACK_RESP_T_OFFSET                    0x08
-#define DW3000_REG_1_ACK_RESP_T_LEN                       4
-
-#define DW3000_REG_1_TX_POWER_OFFSET                      0x0C
-#define DW3000_REG_1_TX_POWER_LEN                         4
-
-#define DW3000_REG_1_CHAN_CTRL_OFFSET                     0x14
-#define DW3000_REG_1_CHAN_CTRL_LEN                        2
-
-#define DW3000_REG_1_LE_PEND_01_OFFSET                    0x18
-#define DW3000_REG_1_LE_PEND_01_LEN                       4
-
-#define DW3000_REG_1_LE_PEND_23_OFFSET                    0x1C
-#define DW3000_REG_1_LE_PEND_23_LEN                       4
-
-#define DW3000_REG_1_SPI_COLLISION_OFFSET                 0x20
-#define DW3000_REG_1_SPI_COLLISION_LEN                    1
-
-#define DW3000_REG_1_RDB_STATUS_OFFSET                    0x24
-#define DW3000_REG_1_RDB_STATUS_LEN                       1
-
-#define DW3000_REG_1_RDB_DIAG_OFFSET                      0x28
-#define DW3000_REG_1_RDB_DIAG_LEN                         1
-
-#define DW3000_REG_1_AES_CFG_OFFSET                       0x30
-#define DW3000_REG_1_AES_CFG_LEN                          2
-
-#define DW3000_REG_1_AES_IV0_OFFSET                       0x34
-#define DW3000_REG_1_AES_IV0_LEN                          4
-
-#define DW3000_REG_1_AES_IV1_OFFSET                       0x38
-#define DW3000_REG_1_AES_IV1_LEN                          4
-
-#define DW3000_REG_1_AES_IV2_OFFSET                       0x3C
-#define DW3000_REG_1_AES_IV2_LEN                          4
-
-#define DW3000_REG_1_AES_IV3_OFFSET                       0x40
-#define DW3000_REG_1_AES_IV3_LEN                          2
-
-#define DW3000_REG_1_AES_IV4_OFFSET                       0x42
-#define DW3000_REG_1_AES_IV4_LEN                          2
-
-#define DW3000_REG_1_DMA_CFG_OFFSET                       0x44
-#define DW3000_REG_1_DMA_CFG_LEN                          8
-
-#define DW3000_REG_1_AES_START_OFFSET                     0x4C
-#define DW3000_REG_1_AES_START_LEN                        1
-
-#define DW3000_REG_1_AES_STS_OFFSET                       0x50
-#define DW3000_REG_1_AES_STS_LEN                          4
-
-#define DW3000_REG_1_AES_KEY_OFFSET                       0x54
-#define DW3000_REG_1_AES_KEY_LEN                          16
-
-/******************************************************************************
-* @brief Bit definitions for register page 0x02: STS_CONFIG
-**/
-
-#define DW3000_REG_2_ADDR                                 0x02
-
-#define DW3000_REG_2_STS_CFG_OFFSET                       0x00
-#define DW3000_REG_2_STS_CFG_LEN                          2
-
-#define DW3000_REG_2_STS_CTRL_OFFSET                      0x04
-#define DW3000_REG_2_STS_CTRL_LEN                         1
-
-#define DW3000_REG_2_STS_STS_OFFSET                       0x08
-#define DW3000_REG_2_STS_STS_LEN                          2
-
-#define DW3000_REG_2_STS_KEY_OFFSET                       0x0C
-#define DW3000_REG_2_STS_KEY_LEN                          16
-
-#define DW3000_REG_2_STS_IV_OFFSET                        0x1C
-#define DW3000_REG_2_STS_IV_LEN                           16
-
-
-/******************************************************************************
-* @brief Bit definitions for register page 0x03: RX_TUNE
-**/
-
-#define DW3000_REG_3_ADDR                                 0x03
-
-#define DW3000_REG_3_DCG_CFG_OFFSET                       0x18
-#define DW3000_REG_3_DCG_CFG_LEN                          2
-
-#define DW3000_REG_3_DGC_CFG0_OFFSET                      0x1C
-#define DW3000_REG_3_DGC_CFG0_LEN                         4
-
-#define DW3000_REG_3_DGC_CFG1_OFFSET                      0x20
-#define DW3000_REG_3_DGC_CFG1_LEN                         4
-
-#define DW3000_REG_3_DGC_LUT_0_OFFSET                     0x38
-#define DW3000_REG_3_DGC_LUT_0_LEN                        4
-
-#define DW3000_REG_3_DGC_LUT_1_OFFSET                     0x3C
-#define DW3000_REG_3_DGC_LUT_1_LEN                        4
-
-#define DW3000_REG_3_DGC_LUT_2_OFFSET                     0x40
-#define DW3000_REG_3_DGC_LUT_2_LEN                        4
-
-#define DW3000_REG_3_DGC_LUT_3_OFFSET                     0x44
-#define DW3000_REG_3_DGC_LUT_3_LEN                        4
-
-#define DW3000_REG_3_DGC_LUT_4_OFFSET                     0x48
-#define DW3000_REG_3_DGC_LUT_4_LEN                        4
-
-#define DW3000_REG_3_DGC_LUT_5_OFFSET                     0x4C
-#define DW3000_REG_3_DGC_LUT_5_LEN                        4
-
-#define DW3000_REG_3_DGC_LUT_6_OFFSET                     0x50
-#define DW3000_REG_3_DGC_LUT_6_LEN                        4
-
-#define DW3000_REG_3_DCG_DBG_OFFSET                       0x60
-#define DW3000_REG_3_DCG_DBG_LEN                          4
-
-/******************************************************************************
- * @brief Bit definitions for register page 0x04: EXT_SYNC
- * @brief External sync control and RX calibration
-**/
-
-#define DW3000_REG_4_ADDR                                 0x04
-
-#define DW3000_REG_4_EC_CTRL_OFFSET                       0x00
-#define DW3000_REG_4_EC_CTRL_LEN                          4
-
-#define DW3000_REG_4_RX_CAL_OFFSET                        0x0C
-#define DW3000_REG_4_RX_CAL_LEN                           4
-
-#define DW3000_REG_4_RX_CAL_RESI_OFFSET                   0x14
-#define DW3000_REG_4_RX_CAL_RESI_LEN                      4
-
-#define DW3000_REG_4_RX_CAL_RESQ_OFFSET                   0x1C
-#define DW3000_REG_4_RX_CAL_RESQ_LEN                      4
-
-#define DW3000_REG_4_RX_CAL_STS_OFFSET                    0x20
-#define DW3000_REG_4_RX_CAL_STS_LEN                       1
-
-
-/******************************************************************************
- * @brief Bit definitions for register page 0x05: GPIO_CTRL
- * @brief GPIO control and status
-**/
-
-#define DW3000_REG_5_ADDR                                 0x05
-
-#define DW3000_REG_5_GPIO_MODE_OFFSET                     0x00
-#define DW3000_REG_5_GPIO_MODE_LEN                        4
-
-#define DW3000_REG_5_GPIO_PULL_EN_OFFSET                  0x04
-#define DW3000_REG_5_GPIO_PULL_EN_LEN                     2
-
-#define DW3000_REG_5_GPIO_DIR_OFFSET                      0x08
-#define DW3000_REG_5_GPIO_DIR_LEN                         2
-
-#define DW3000_REG_5_GPIO_OUT_OFFSET                      0x0C
-#define DW3000_REG_5_GPIO_OUT_LEN                         2
-
-#define DW3000_REG_5_GPIO_IRQE_OFFSET                     0x10
-#define DW3000_REG_5_GPIO_IRQE_LEN                        2
-
-#define DW3000_REG_5_GPIO_ISTS_OFFSET                     0x14
-#define DW3000_REG_5_GPIO_ISTS_LEN                        2
-
-#define DW3000_REG_5_GPIO_ISEN_OFFSET                     0x18
-#define DW3000_REG_5_GPIO_ISEN_LEN                        2
-
-#define DW3000_REG_5_GPIO_IMODE_OFFSET                    0x1C
-#define DW3000_REG_5_GPIO_IMODE_LEN                       2
-
-#define DW3000_REG_5_GPIO_IBES_OFFSET                     0x20
-#define DW3000_REG_5_GPIO_IBES_LEN                        2
-
-#define DW3000_REG_5_GPIO_ICLR_OFFSET                     0x24
-#define DW3000_REG_5_GPIO_ICLR_LEN                        2
-
-#define DW3000_REG_5_GPIO_IDBE_OFFSET                     0x28
-#define DW3000_REG_5_GPIO_IDBE_LEN                        2
-
-#define DW3000_REG_5_GPIO_RAW_OFFSET                      0x2C
-#define DW3000_REG_5_GPIO_RAW_LEN                         2
-
-/******************************************************************************
- * @brief Bit definitions for register page 0x06: DRX_CONF
- * @brief Digital receiver configuration
-**/
-
-#define DW3000_REG_6_ADDR                                 0x06
-
-#define DW3000_REG_6_DTUNE0_OFFSET                        0x00
-#define DW3000_REG_6_DTUNE0_LEN                           2
-
-#define DW3000_REG_6_RX_SFD_TOC_OFFSET                    0x02
-#define DW3000_REG_6_RX_SFD_TOC_LEN                       2
-
-#define DW3000_REG_6_PRE_TOC_OFFSET                       0x04
-#define DW3000_REG_6_PRE_TOC_LEN                          2
-
-#define DW3000_REG_6_DTUNE3_OFFSET                        0x0C
-#define DW3000_REG_6_DTUNE3_LEN                           4
-
-#define DW3000_REG_6_DTUNE_5_OFFSET                       0x14
-#define DW3000_REG_6_DTUNE_5_LEN                          4
-
-#define DW3000_REG_6_DRX_CAR_INT_OFFSET                   0x29
-#define DW3000_REG_6_DRX_CAR_INT_LEN                      3
-
-
-/******************************************************************************
- * @brief Bit definitions for register page 0x07: RF_CONF
- * @brief Analog RF configuration block
-**/
-
-#define DW3000_REG_7_ADDR                                 0x07
-
-#define DW3000_REG_7_RF_ENABLE_OFFSET                     0x00
-#define DW3000_REG_7_RF_ENABLE_LEN                        4
-
-#define DW3000_REG_7_RF_CTRL_MASK_OFFSET                  0x04
-#define DW3000_REG_7_RF_CTRL_MASK_LEN                     4
-
-#define DW3000_REG_7_RF_SWITCH_OFFSET                     0x14
-#define DW3000_REG_7_RF_SWITCH_LEN                        4
-
-#define DW3000_REG_7_RF_TX_CTRL_1_OFFSET                  0x1A
-#define DW3000_REG_7_RF_TX_CTRL_1_LEN                     1
-
-#define DW3000_REG_7_RF_TX_CTRL_2_OFFSET                  0x1C
-#define DW3000_REG_7_RF_TX_CTRL_2_LEN                     4
-
-#define DW3000_REG_7_TX_TEST_OFFSET                       0x28
-#define DW3000_REG_7_TX_TEST_LEN                          1
-
-#define DW3000_REG_7_SAR_TEST_OFFSET                      0x34
-#define DW3000_REG_7_SAR_TEST_LEN                         1
-
-#define DW3000_REG_7_LDO_TUNE_OFFSET                      0x40
-#define DW3000_REG_7_LDO_TUNE_LEN                         8
-
-#define DW3000_REG_7_LDO_CTRL_OFFSET                      0x48
-#define DW3000_REG_7_LDO_CTRL_LEN                         4
-
-#define DW3000_REG_7_LDO_RLOAD_OFFSET                     0x51
-#define DW3000_REG_7_LDO_RLOAD_LEN                        1
-
-
-/******************************************************************************
- * @brief Bit definitions for register page 0x08: TX_CAL
- * @brief Transmitter calibration block
-**/
-
-#define DW3000_REG_8_ADDR                                 0x08
-
-#define DW3000_REG_8_SAR_CTRL_OFFSET                      0x00
-#define DW3000_REG_8_SAR_CTRL_LEN                         1
-
-#define DW3000_REG_8_SAR_STATUS_OFFSET                    0x04
-#define DW3000_REG_8_SAR_STATUS_LEN                       1
-
-#define DW3000_REG_8_SAR_READING_OFFSET                   0x08
-#define DW3000_REG_8_SAR_READING_LEN                      3
-
-#define DW3000_REG_8_SAR_WAKE_RD_OFFSET                   0x0C
-#define DW3000_REG_8_SAR_WAKE_RD_LEN                      2
-
-
-
-
-
+#define DW3000_REG_0_SYS_CFG_BYTE_LEN                     (4U)
+/* Fields */
+#define DW3000_REG_0_SYS_CFG_FFEN_BIT_OFFSET              (0U)
+#define DW3000_REG_0_SYS_CFG_FFEN_BIT_MASK                (0x1U)
+#define DW3000_REG_0_SYS_CFG_DIS_FCS_TX_BIT_OFFSET        (1U)
+#define DW3000_REG_0_SYS_CFG_DIS_FCS_TX_BIT_MASK          (0x2U)
+#define DW3000_REG_0_SYS_CFG_DIS_FCE_BIT_OFFSET           (2U)
+#define DW3000_REG_0_SYS_CFG_DIS_FCE_BIT_MASK             (0x4U)
+#define DW3000_REG_0_SYS_CFG_DIS_DRXB_BIT_OFFSET          (3U)
+#define DW3000_REG_0_SYS_CFG_DIS_DRXB_BIT_MASK            (0x8U)
+#define DW3000_REG_0_SYS_CFG_PHR_MODE_BIT_OFFSET          (4U)
+#define DW3000_REG_0_SYS_CFG_PHR_MODE_BIT_MASK            (0x10U)
+#define DW3000_REG_0_SYS_CFG_PHR_6M8_BIT_OFFSET           (5U)
+#define DW3000_REG_0_SYS_CFG_PHR_6M8_BIT_MASK             (0x20U)
+#define DW3000_REG_0_SYS_CFG_SPI_CRCEN_BIT_OFFSET         (6U)
+#define DW3000_REG_0_SYS_CFG_SPI_CRCEN_BIT_MASK           (0x40U)
+#define DW3000_REG_0_SYS_CFG_CIA_IPATOV_BIT_OFFSET        (7U)
+#define DW3000_REG_0_SYS_CFG_CIA_IPATOV_BIT_MASK          (0x80U)
+#define DW3000_REG_0_SYS_CFG_CIA_STS_BIT_OFFSET           (8U)
+#define DW3000_REG_0_SYS_CFG_CIA_STS_BIT_MASK             (0x100U)
+#define DW3000_REG_0_SYS_CFG_RXWTOE_BIT_OFFSET            (9U)
+#define DW3000_REG_0_SYS_CFG_RXWTOE_BIT_MASK              (0x200U)
+#define DW3000_REG_0_SYS_CFG_RXAUTR_BIT_OFFSET            (10U)
+#define DW3000_REG_0_SYS_CFG_RXAUTR_BIT_MASK              (0x400U)
+#define DW3000_REG_0_SYS_CFG_AUTO_ACK_BIT_OFFSET          (11U)
+#define DW3000_REG_0_SYS_CFG_AUTO_ACK_BIT_MASK            (0x800U)
+#define DW3000_REG_0_SYS_CFG_CP_SPC_BIT_OFFSET            (12U)
+#define DW3000_REG_0_SYS_CFG_CP_SPC_BIT_MASK              (0x3000U)
+#define DW3000_REG_0_SYS_CFG_CP_SDC_BIT_OFFSET            (15U)
+#define DW3000_REG_0_SYS_CFG_CP_SDC_BIT_MASK              (0x8000U)
+#define DW3000_REG_0_SYS_CFG_PDOA_MODE_BIT_OFFSET         (16U)
+#define DW3000_REG_0_SYS_CFG_PDOA_MODE_BIT_MASK           (0x30000U)
+#define DW3000_REG_0_SYS_CFG_FAST_AAT_BIT_OFFSET          (18U)
+#define DW3000_REG_0_SYS_CFG_FAST_AAT_BIT_MASK            (0x40000U)
+
+/* Register: FF_CFG (0x12) */
+#define DW3000_REG_0_FF_CFG_OFFSET                         0x14
+#define DW3000_REG_0_FF_CFG_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_0_FF_CFG_FFAB_BIT_OFFSET                (0U)
+#define DW3000_REG_0_FF_CFG_FFAB_BIT_MASK                  (0x1U)
+#define DW3000_REG_0_FF_CFG_FFAD_BIT_OFFSET                (1U)
+#define DW3000_REG_0_FF_CFG_FFAD_BIT_MASK                  (0x2U)
+#define DW3000_REG_0_FF_CFG_FFAA_BIT_OFFSET                (2U)
+#define DW3000_REG_0_FF_CFG_FFAA_BIT_MASK                  (0x4U)
+#define DW3000_REG_0_FF_CFG_FFAM_BIT_OFFSET                (3U)
+#define DW3000_REG_0_FF_CFG_FFAM_BIT_MASK                  (0x8U)
+#define DW3000_REG_0_FF_CFG_FFAR_BIT_OFFSET                (4U)
+#define DW3000_REG_0_FF_CFG_FFAR_BIT_MASK                  (0x10U)
+#define DW3000_REG_0_FF_CFG_FFAMULTI_BIT_OFFSET            (5U)
+#define DW3000_REG_0_FF_CFG_FFAMULTI_BIT_MASK              (0x20U)
+#define DW3000_REG_0_FF_CFG_FFAF_BIT_OFFSET                (6U)
+#define DW3000_REG_0_FF_CFG_FFAF_BIT_MASK                  (0x40U)
+#define DW3000_REG_0_FF_CFG_FFAE_BIT_OFFSET                (7U)
+#define DW3000_REG_0_FF_CFG_FFAE_BIT_MASK                  (0x80U)
+#define DW3000_REG_0_FF_CFG_FFBC_BIT_OFFSET                (8U)
+#define DW3000_REG_0_FF_CFG_FFBC_BIT_MASK                  (0x100U)
+#define DW3000_REG_0_FF_CFG_FFIB_BIT_OFFSET                (9U)
+#define DW3000_REG_0_FF_CFG_FFIB_BIT_MASK                  (0x200U)
+#define DW3000_REG_0_FF_CFG_LE0_PEND_BIT_OFFSET            (10U)
+#define DW3000_REG_0_FF_CFG_LE0_PEND_BIT_MASK              (0x400U)
+#define DW3000_REG_0_FF_CFG_LE1_PEND_BIT_OFFSET            (11U)
+#define DW3000_REG_0_FF_CFG_LE1_PEND_BIT_MASK              (0x800U)
+#define DW3000_REG_0_FF_CFG_LE2_PEND_BIT_OFFSET            (12U)
+#define DW3000_REG_0_FF_CFG_LE2_PEND_BIT_MASK              (0x1000U)
+#define DW3000_REG_0_FF_CFG_LE3_PEND_BIT_OFFSET            (13U)
+#define DW3000_REG_0_FF_CFG_LE3_PEND_BIT_MASK              (0x2000U)
+#define DW3000_REG_0_FF_CFG_SSADRAPE_BIT_OFFSET            (14U)
+#define DW3000_REG_0_FF_CFG_SSADRAPE_BIT_MASK              (0x4000U)
+#define DW3000_REG_0_FF_CFG_LSADRAPE_BIT_OFFSET            (15U)
+#define DW3000_REG_0_FF_CFG_LSADRAPE_BIT_MASK              (0x8000U)
+
+/* Register: SPI_RD_CRC (0x18) */
+#define DW3000_REG_0_SPI_RD_CRC_OFFSET                     0x18
+#define DW3000_REG_0_SPI_RD_CRC_BYTE_LEN                   (1U)
+
+/* Register: SYS_TIME (0x1C) */
+#define DW3000_REG_0_SYS_TIME_OFFSET                       0x1C
+#define DW3000_REG_0_SYS_TIME_BYTE_LEN                     (4U)
+
+/* Register: TX_FCTRL (0x24) */
+#define DW3000_REG_0_TX_FCTRL_OFFSET                       0x24
+#define DW3000_REG_0_TX_FCTRL_BYTE_LEN                     (6U)
+#define DW3000_REG_0_TX_FCTRL_P0_BYTE_OFFSET               (0U)
+#define DW3000_REG_0_TX_FCTRL_P1_BYTE_OFFSET               (4U)
+/* Fields */
+// P1
+#define DW3000_REG_0_TX_FCTRL_P0_TXFLEN_BIT_OFFSET         (0U)
+#define DW3000_REG_0_TX_FCTRL_P0_TXFLEN_BIT_MASK           (0x3FFU)     
+#define DW3000_REG_0_TX_FCTRL_P0_TXBR_BIT_OFFSET           (10U)
+#define DW3000_REG_0_TX_FCTRL_P0_TXBR_BIT_MASK             (0x400U)     
+#define DW3000_REG_0_TX_FCTRL_P0_TR_BIT_OFFSET             (11U)
+#define DW3000_REG_0_TX_FCTRL_P0_TR_BIT_MASK               (0x800U)     
+#define DW3000_REG_0_TX_FCTRL_P0_TXPSR_BIT_OFFSET          (12U)
+#define DW3000_REG_0_TX_FCTRL_P0_TXPSR_BIT_MASK            (0xF000U)    
+#define DW3000_REG_0_TX_FCTRL_P0_TXB_OFFSET_BIT_OFFSET     (16U)
+#define DW3000_REG_0_TX_FCTRL_P0_TXB_OFFSET_BIT_MASK       (0x3FF0000U) 
+// P2
+#define DW3000_REG_0_TX_FCTRL_P1_FINE_PLEN_BIT_OFFSET      (8U)
+#define DW3000_REG_0_TX_FCTRL_P1_FINE_PLEN_BIT_MASK        (0xFF00U)   
+
+/* Register: DX_TIME (0x2C) */
+#define DW3000_REG_0_DX_TIME_OFFSET                        0x2C
+#define DW3000_REG_0_DX_TIME_BYTE_LEN                      (4U)
+
+/* Register: DREF_TIME (0x30) */
+#define DW3000_REG_0_DREF_TIME_OFFSET                      0x30
+#define DW3000_REG_0_DREF_TIME_BYTE_LEN                    (4U)
+
+/* Register: RX_FWTO (0x34) */
+#define DW3000_REG_0_RX_FWTO_OFFSET                        0x34
+#define DW3000_REG_0_RX_FWTO_BYTE_LEN                      (3U)
+
+/* Register: SYS_CTRL (0x38) */
+#define DW3000_REG_0_SYS_CTRL_OFFSET                       0x38
+#define DW3000_REG_0_SYS_CTRL_BYTE_LEN                     (1U)
+
+/* Register: SYS_ENABLE (0x3C) */
+#define DW3000_REG_0_SYS_ENABLE_OFFSET                     0x3C
+#define DW3000_REG_0_SYS_ENABLE_BYTE_LEN                   (6U)
+#define DW3000_REG_0_SYS_ENABLE_P0_BYTE_OFFSET             (0U)
+#define DW3000_REG_0_SYS_ENABLE_P1_BYTE_OFFSET             (4U)
+/* Fields */
+// P0
+#define DW3000_REG_0_SYS_ENABLE_P0_CPLOCK_EN_BIT_OFFSET    (1U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CPLOCK_EN_BIT_MASK      (0x2U)
+#define DW3000_REG_0_SYS_ENABLE_P0_SPICRCE_EN_BIT_OFFSET   (2U)
+#define DW3000_REG_0_SYS_ENABLE_P0_SPICRCE_EN_BIT_MASK     (0x4U)
+#define DW3000_REG_0_SYS_ENABLE_P0_AAT_EN_BIT_OFFSET       (3U)
+#define DW3000_REG_0_SYS_ENABLE_P0_AAT_EN_BIT_MASK         (0x8U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXFRB_EN_BIT_OFFSET     (4U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXFRB_EN_BIT_MASK       (0x10U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXPRS_EN_BIT_OFFSET     (5U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXPRS_EN_BIT_MASK       (0x20U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXPHS_EN_BIT_OFFSET     (6U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXPHS_EN_BIT_MASK       (0x40U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXFRS_EN_BIT_OFFSET     (7U)
+#define DW3000_REG_0_SYS_ENABLE_P0_TXFRS_EN_BIT_MASK       (0x80U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPRD_EN_BIT_OFFSET     (8U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPRD_EN_BIT_MASK       (0x100U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXSFDD_EN_BIT_OFFSET    (9U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXSFDD_EN_BIT_MASK      (0x200U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CIADONE_EN_BIT_OFFSET   (10U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CIADONE_EN_BIT_MASK     (0x400U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPHD_EN_BIT_OFFSET     (11U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPHD_EN_BIT_MASK       (0x800U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPHE_EN_BIT_OFFSET     (12U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPHE_EN_BIT_MASK       (0x1000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFR_EN_BIT_OFFSET      (13U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFR_EN_BIT_MASK        (0x2000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFCG_EN_BIT_OFFSET     (14U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFCG_EN_BIT_MASK       (0x4000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFCE_EN_BIT_OFFSET     (15U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFCE_EN_BIT_MASK       (0x8000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXRFSL_EN_BIT_OFFSET    (16U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXRFSL_EN_BIT_MASK      (0x10000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFTO_EN_BIT_OFFSET     (17U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXFTO_EN_BIT_MASK       (0x20000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CIAERR_EN_BIT_OFFSET    (18U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CIAERR_EN_BIT_MASK      (0x40000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_VWARN_EN_BIT_OFFSET     (19U)
+#define DW3000_REG_0_SYS_ENABLE_P0_VWARN_EN_BIT_MASK       (0x80000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXOVRR_EN_BIT_OFFSET    (20U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXOVRR_EN_BIT_MASK      (0x100000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPTO_EN_BIT_OFFSET     (21U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXPTO_EN_BIT_MASK       (0x200000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_SPIRDY_EN_BIT_OFFSET    (23U)
+#define DW3000_REG_0_SYS_ENABLE_P0_SPIRDY_EN_BIT_MASK      (0x800000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RCINIT_EN_BIT_OFFSET    (24U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RCINIT_EN_BIT_MASK      (0x1000000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_PLL_HILO_EN_BIT_OFFSET  (25U)
+#define DW3000_REG_0_SYS_ENABLE_P0_PLL_HILO_EN_BIT_MASK    (0x2000000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXSTO_EN_BIT_OFFSET     (26U)
+#define DW3000_REG_0_SYS_ENABLE_P0_RXSTO_EN_BIT_MASK       (0x4000000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_HPDWARN_EN_BIT_OFFSET   (27U)
+#define DW3000_REG_0_SYS_ENABLE_P0_HPDWARN_EN_BIT_MASK     (0x8000000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CPERR_EN_BIT_OFFSET     (28U)
+#define DW3000_REG_0_SYS_ENABLE_P0_CPERR_EN_BIT_MASK       (0x10000000U)
+#define DW3000_REG_0_SYS_ENABLE_P0_ARFE_EN_BIT_OFFSET      (29U)
+#define DW3000_REG_0_SYS_ENABLE_P0_ARFE_EN_BIT_MASK        (0x20000000U)
+// P1
+#define DW3000_REG_0_SYS_ENABLE_P1_RXPREJ_EN_BIT_OFFSET    (1U)
+#define DW3000_REG_0_SYS_ENABLE_P1_RXPREJ_EN_BIT_MASK      (0x2U)
+#define DW3000_REG_0_SYS_ENABLE_P1_VT_DET_EN_BIT_OFFSET    (4U)
+#define DW3000_REG_0_SYS_ENABLE_P1_VT_DET_EN_BIT_MASK      (0x10U)
+#define DW3000_REG_0_SYS_ENABLE_P1_GPIOIRQ_EN_BIT_OFFSET   (5U)
+#define DW3000_REG_0_SYS_ENABLE_P1_GPIOIRQ_EN_BIT_MASK     (0x20U)
+#define DW3000_REG_0_SYS_ENABLE_P1_AES_DONE_EN_BIT_OFFSET  (6U)
+#define DW3000_REG_0_SYS_ENABLE_P1_AES_DONE_EN_BIT_MASK    (0x40U)
+#define DW3000_REG_0_SYS_ENABLE_P1_AES_ERR_EN_BIT_OFFSET   (7U)
+#define DW3000_REG_0_SYS_ENABLE_P1_AES_ERR_EN_BIT_MASK     (0x80U)
+#define DW3000_REG_0_SYS_ENABLE_P1_CMD_ERR_EN_BIT_OFFSET   (8U)
+#define DW3000_REG_0_SYS_ENABLE_P1_CMD_ERR_EN_BIT_MASK     (0x100U)
+#define DW3000_REG_0_SYS_ENABLE_P1_SPI_OVF_EN_BIT_OFFSET   (9U)
+#define DW3000_REG_0_SYS_ENABLE_P1_SPI_OVF_EN_BIT_MASK     (0x200U)
+#define DW3000_REG_0_SYS_ENABLE_P1_SPI_UNF_EN_BIT_OFFSET   (10U)
+#define DW3000_REG_0_SYS_ENABLE_P1_SPI_UNF_EN_BIT_MASK     (0x400U)
+#define DW3000_REG_0_SYS_ENABLE_P1_SPIERR_EN_BIT_OFFSET    (11U)
+#define DW3000_REG_0_SYS_ENABLE_P1_SPIERR_EN_BIT_MASK      (0x800U)
+#define DW3000_REG_0_SYS_ENABLE_P1_CCA_FAIL_EN_BIT_OFFSET  (12U)
+#define DW3000_REG_0_SYS_ENABLE_P1_CCA_FAIL_EN_BIT_MASK    (0x1000U)
+
+/* Register: SYS_STATUS (0x44) */
+#define DW3000_REG_0_SYS_STATUS_OFFSET                     0x44
+#define DW3000_REG_0_SYS_STATUS_BYTE_LEN                   (6U)
+#define DW3000_REG_0_SYS_STATUS_P0_BYTE_OFFSET             (0U)
+#define DW3000_REG_0_SYS_STATUS_P1_BYTE_OFFSET             (4U)
+/* Fields */
+// P0
+#define DW3000_REG_0_SYS_STATUS_P0_IRQS_BIT_OFFSET         (0U)
+#define DW3000_REG_0_SYS_STATUS_P0_IRQS_BIT_MASK           (0x1U)
 
 
 
@@ -347,3 +262,6 @@
 
 
 #endif // __DW3000_REGS_H__
+
+
+
