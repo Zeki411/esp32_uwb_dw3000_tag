@@ -747,10 +747,82 @@
 #define DW3000_REG_6_DRX_CAR_INT_OFFSET                     0x29
 #define DW3000_REG_6_DRX_CAR_INT_BYTE_LEN                   (3U)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x07 : RF_CONF
+* @note  Analog RF configuration
+**/
+#define DW3000_REG_7_ADDR                                   0x07
 
+/* Register: RF_ENABLE (0x00) */
+#define DW3000_REG_7_RF_ENABLE_OFFSET                       0x00
+#define DW3000_REG_7_RF_ENABLE_BYTE_LEN                     (4U)
 
+/* Register: RF_CTRL_MASK (0x04) */
+#define DW3000_REG_7_RF_CTRL_MASK_OFFSET                    0x04
+#define DW3000_REG_7_RF_CTRL_MASK_BYTE_LEN                  (4U)
 
+/* Register: RF_SWITCH (0x14) */
+#define DW3000_REG_7_RF_SWITCH_OFFSET                       0x14
+#define DW3000_REG_7_RF_SWITCH_BYTE_LEN                     (4U)
+/* Fields */
+#define DW3000_REG_7_RF_SWITCH_ANTSWNOTOGGLE_BIT_OFFSET     (0U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWNOTOGGLE_BIT_MASK       (0x1U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWPDOAPORT_BIT_OFFSET     (1U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWPDOAPORT_BIT_MASK       (0x2U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWEN_BIT_OFFSET           (8U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWEN_BIT_MASK             (0x100U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWCTRL_BIT_OFFSET         (12U)
+#define DW3000_REG_7_RF_SWITCH_ANTSWCTRL_BIT_MASK           (0x7000U)
+#define DW3000_REG_7_RF_SWITCH_TRXSWEN_BIT_OFFSET           (16U)
+#define DW3000_REG_7_RF_SWITCH_TRXSWEN_BIT_MASK             (0x10000U)
+#define DW3000_REG_7_RF_SWITCH_TRXSWCTRL_BIT_OFFSET         (24U)
+#define DW3000_REG_7_RF_SWITCH_TRXSWCTRL_BIT_MASK           (0x3F000000U)
 
+/* Register: RF_TX_CTRL_1 (0x1A) */
+#define DW3000_REG_7_RF_TX_CTRL_1_OFFSET                    0x1A
+#define DW3000_REG_7_RF_TX_CTRL_1_BYTE_LEN                  (1U)
+
+/* Register: RF_TX_CTRL_2 (0x1C) */
+#define DW3000_REG_7_RF_TX_CTRL_2_OFFSET                    0x1C
+#define DW3000_REG_7_RF_TX_CTRL_2_BYTE_LEN                  (4U)
+/* Fields */
+#define DW3000_REG_7_RF_TX_CTRL_2_PG_DELAY_BIT_OFFSET       (0U)
+#define DW3000_REG_7_RF_TX_CTRL_2_PG_DELAY_BIT_MASK         (0x3FU)
+
+/* Register: TX_TEST (0x28) */
+#define DW3000_REG_7_TX_TEST_OFFSET                         0x28
+#define DW3000_REG_7_TX_TEST_BYTE_LEN                       (1U)
+/* Fields */
+#define DW3000_REG_7_TX_TEST_TX_ENTEST_BIT_OFFSET           (0U)
+#define DW3000_REG_7_TX_TEST_TX_ENTEST_BIT_MASK             (0xFU)
+
+/* Register: SAR_TEST (0x34) */
+#define DW3000_REG_7_SAR_TEST_OFFSET                        0x34
+#define DW3000_REG_7_SAR_TEST_BYTE_LEN                      (1U)
+/* Fields */
+#define DW3000_REG_7_SAR_TEST_SAR_RDEN_BIT_OFFSET           (2U)
+#define DW3000_REG_7_SAR_TEST_SAR_RDEN_BIT_MASK             (0x4U)
+
+/* Register: LDO_TUNE (0x40) */
+#define DW3000_REG_7_LDO_TUNE_OFFSET                        0x40
+#define DW3000_REG_7_LDO_TUNE_BYTE_LEN                      (8U)
+#define DW3000_REG_7_LDO_TUNE_P0_BYTE_OFFSET                (0U)
+#define DW3000_REG_7_LDO_TUNE_P1_BYTE_OFFSET                (4U)
+/* Fields */
+// P0
+#define DW3000_REG_7_LDO_TUNE_P0_LDO_TUNE_BIT_OFFSET        (0U)
+#define DW3000_REG_7_LDO_TUNE_P0_LDO_TUNE_BIT_MASK          (0xFFFFFFFFU)
+// P1
+#define DW3000_REG_7_LDO_TUNE_P1_LDO_TUNE_BIT_OFFSET        (0U)
+#define DW3000_REG_7_LDO_TUNE_P1_LDO_TUNE_BIT_MASK          (0xFFFFFFFU)
+
+/* Register: LDO_CTRL (0x48) */
+#define DW3000_REG_7_LDO_CTRL_OFFSET                        0x48
+#define DW3000_REG_7_LDO_CTRL_BYTE_LEN                      (4U)
+
+/* Register: LDO_RLOAD (0x51) */
+#define DW3000_REG_7_LDO_RLOAD_OFFSET                       0x51
+#define DW3000_REG_7_LDO_RLOAD_BYTE_LEN                     (1U)
 
 
 
