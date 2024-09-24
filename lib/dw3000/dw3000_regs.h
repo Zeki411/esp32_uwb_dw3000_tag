@@ -824,7 +824,11 @@
 #define DW3000_REG_7_LDO_RLOAD_OFFSET                       0x51
 #define DW3000_REG_7_LDO_RLOAD_BYTE_LEN                     (1U)
 
-
+/******************************************************************************
+* @brief Bit definitions for register page 0x08 : TX_CAL
+* @note  Transmitter calibration block
+**/
+#define DW3000_REG_8_ADDR                                   0x08
 
 
 
