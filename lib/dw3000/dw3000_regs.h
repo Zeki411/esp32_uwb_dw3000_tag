@@ -999,6 +999,67 @@
 #define DW3000_REG_10_AON_CFG_PRES_SLEEP_BIT_OFFSET          (5U)
 #define DW3000_REG_10_AON_CFG_PRES_SLEEP_BIT_MASK            (0x20U)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x0B : OTP_IF
+* @note  One Time Programmable memory interface
+**/
+#define DW3000_REG_11_ADDR                                   0x0B
+
+/* Register:  OTP_WDATA (0x00) */
+#define DW3000_REG_11_OTP_WDATA_OFFSET                       0x00
+#define DW3000_REG_11_OTP_WDATA_BYTE_LEN                     (4U)
+
+/* Register:  OTP_ADDR (0x04) */
+#define DW3000_REG_11_OTP_ADDR_OFFSET                        0x04
+#define DW3000_REG_11_OTP_ADDR_BYTE_LEN                      (2U)
+/* Fields */
+#define DW3000_REG_11_OTP_ADDR_OTP_ADDR_BIT_OFFSET           (0U)
+#define DW3000_REG_11_OTP_ADDR_OTP_ADDR_BIT_MASK             (0x3FFU)
+
+/* Register:  OTP_CFG (0x08) */
+#define DW3000_REG_11_OTP_CFG_OFFSET                         0x08
+#define DW3000_REG_11_OTP_CFG_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_11_OTP_CFG_OTP_MAN_BIT_OFFSET             (0U)
+#define DW3000_REG_11_OTP_CFG_OTP_MAN_BIT_MASK               (0x1U)
+#define DW3000_REG_11_OTP_CFG_OTP_READ_BIT_OFFSET            (1U)
+#define DW3000_REG_11_OTP_CFG_OTP_READ_BIT_MASK              (0x2U)
+#define DW3000_REG_11_OTP_CFG_OTP_WRITE_BIT_OFFSET           (2U)
+#define DW3000_REG_11_OTP_CFG_OTP_WRITE_BIT_MASK             (0x4U)
+#define DW3000_REG_11_OTP_CFG_OTP_WRITE_MR_BIT_OFFSET        (3U)
+#define DW3000_REG_11_OTP_CFG_OTP_WRITE_MR_BIT_MASK          (0x8U)
+#define DW3000_REG_11_OTP_CFG_DGC_KICK_BIT_OFFSET            (6U)
+#define DW3000_REG_11_OTP_CFG_DGC_KICK_BIT_MASK              (0x40U)
+#define DW3000_REG_11_OTP_CFG_LDO_KICK_BIT_OFFSET            (7U)
+#define DW3000_REG_11_OTP_CFG_LDO_KICK_BIT_MASK              (0x80U)
+#define DW3000_REG_11_OTP_CFG_OPS_KICK_BIT_OFFSET            (10U)
+#define DW3000_REG_11_OTP_CFG_OPS_KICK_BIT_MASK              (0x400U)
+#define DW3000_REG_11_OTP_CFG_OPS_SEL_BIT_OFFSET             (11U)
+#define DW3000_REG_11_OTP_CFG_OPS_SEL_BIT_MASK               (0x1800U)
+#define DW3000_REG_11_OTP_CFG_DGC_SEL_BIT_OFFSET             (13U)
+#define DW3000_REG_11_OTP_CFG_DGC_SEL_BIT_MASK               (0x2000U)
+
+/* Register:  OTP_STAT (0x0C) */
+#define DW3000_REG_11_OTP_STAT_OFFSET                        0x0C
+#define DW3000_REG_11_OTP_STAT_BYTE_LEN                      (1U)
+/* Fields */
+#define DW3000_REG_11_OTP_STAT_OTP_PROG_DONE_BIT_OFFSET      (0U)
+#define DW3000_REG_11_OTP_STAT_OTP_PROG_DONE_BIT_MASK        (0x1U)
+#define DW3000_REG_11_OTP_STAT_OTP_VPP_OK_BIT_OFFSET         (1U)
+#define DW3000_REG_11_OTP_STAT_OTP_VPP_OK_BIT_MASK           (0x2U)
+
+/* Register:  OTP_RDATA (0x10) */
+#define DW3000_REG_11_OTP_RDATA_OFFSET                       0x10
+#define DW3000_REG_11_OTP_RDATA_BYTE_LEN                     (4U)
+
+/* Register:  OTP_SRDATA (0x14) */
+#define DW3000_REG_11_OTP_SRDATA_OFFSET                      0x14
+#define DW3000_REG_11_OTP_SRDATA_BYTE_LEN                    (4U)
+
+
+
+
+
 
 
 
