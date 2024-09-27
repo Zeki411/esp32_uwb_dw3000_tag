@@ -1324,6 +1324,75 @@
 #define DW3000_REG_13_STS1_DIAG_12_CP_NACC_BIT_OFFSET        (0U)
 #define DW3000_REG_13_STS1_DIAG_12_CP_NACC_BIT_MASK          (0x7FU)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x0E : CIA_IF p3
+* @note  Channel Impulse Response Analyser (CIA) Interface part 3
+**/
+#define DW3000_REG_14_ADDR                                   0x0E
+
+/* Register:  CIA_CONF (0x00) */
+#define DW3000_REG_14_CIA_CONF_OFFSET                        0x00
+#define DW3000_REG_14_CIA_CONF_BYTE_LEN                      (4U)
+/* Fields */
+#define DW3000_REG_14_CIA_CONF_RXANTD_BIT_OFFSET             (0U)
+#define DW3000_REG_14_CIA_CONF_RXANTD_BIT_MASK               (0xFFFFU)
+#define DW3000_REG_14_CIA_CONF_MINDIAG_BIT_OFFSET            (20U)
+#define DW3000_REG_14_CIA_CONF_MINDIAG_BIT_MASK              (0x100000U)
+
+/* Register:  FP_CONF (0x04) */
+#define DW3000_REG_14_FP_CONF_OFFSET                         0x04
+#define DW3000_REG_14_FP_CONF_BYTE_LEN                       (4U)
+/* Fields */
+#define DW3000_REG_14_FP_CONF_FP_AGREED_TH_BIT_OFFSET        (0U)
+#define DW3000_REG_14_FP_CONF_FP_AGREED_TH_BIT_MASK          (0x7FFU)
+#define DW3000_REG_14_FP_CONF_CAL_TEMP_BIT_OFFSET            (11U)
+#define DW3000_REG_14_FP_CONF_CAL_TEMP_BIT_MASK              (0x7F800U)
+#define DW3000_REG_14_FP_CONF_TC_RXDLY_EN_BIT_OFFSET         (20U)
+#define DW3000_REG_14_FP_CONF_TC_RXDLY_EN_BIT_MASK           (0x100000U)
+
+/* Register:  IP_CONF (0x0C) */
+#define DW3000_REG_14_IP_CONF_OFFSET                         0x0C
+#define DW3000_REG_14_IP_CONF_BYTE_LEN                       (4U)
+/* Fields */
+#define DW3000_REG_14_IP_CONF_IP_NTM_BIT_OFFSET              (0U)
+#define DW3000_REG_14_IP_CONF_IP_NTM_BIT_MASK                (0x1FU)
+#define DW3000_REG_14_IP_CONF_IP_PMULT_BIT_OFFSET            (5U)
+#define DW3000_REG_14_IP_CONF_IP_PMULT_BIT_MASK              (0x60U)
+#define DW3000_REG_14_IP_CONF_IP_RTM_BIT_OFFSET              (16U)
+#define DW3000_REG_14_IP_CONF_IP_RTM_BIT_MASK                (0x1F0000U)
+
+/* Register:  STS_CONF_0 (0x12) */
+#define DW3000_REG_14_STS_CONF_0_OFFSET                      0x12
+#define DW3000_REG_14_STS_CONF_0_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_14_STS_CONF_0_STS_NTM_BIT_OFFSET          (0U)
+#define DW3000_REG_14_STS_CONF_0_STS_NTM_BIT_MASK            (0x1FU)
+#define DW3000_REG_14_STS_CONF_0_STS_PMULT_BIT_OFFSET        (5U)
+#define DW3000_REG_14_STS_CONF_0_STS_PMULT_BIT_MASK          (0x60U)
+#define DW3000_REG_14_STS_CONF_0_STS_MNTH_BIT_OFFSET         (16U)
+#define DW3000_REG_14_STS_CONF_0_STS_MNTH_BIT_MASK           (0x7F0000U)
+
+/* Register:  STS_CONF_1 (0x16) */
+#define DW3000_REG_14_STS_CONF_1_OFFSET                      0x16
+#define DW3000_REG_14_STS_CONF_1_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_14_STS_CONF_1_RES_B0_BIT_OFFSET           (0U)
+#define DW3000_REG_14_STS_CONF_1_RES_B0_BIT_MASK             (0xFFU)
+#define DW3000_REG_14_STS_CONF_1_FP_AGREED_EN_BIT_OFFSET     (28U)
+#define DW3000_REG_14_STS_CONF_1_FP_AGREED_EN_BIT_MASK       (0x10000000U)
+#define DW3000_REG_14_STS_CONF_1_STS_CQ_EN_BIT_OFFSET        (29U)
+#define DW3000_REG_14_STS_CONF_1_STS_CQ_EN_BIT_MASK          (0x20000000U)
+#define DW3000_REG_14_STS_CONF_1_STS_SS_EN_BIT_OFFSET        (30U)
+#define DW3000_REG_14_STS_CONF_1_STS_SS_EN_BIT_MASK          (0x40000000U)
+#define DW3000_REG_14_STS_CONF_1_STS_PGR_EN_BIT_OFFSET       (31U)
+#define DW3000_REG_14_STS_CONF_1_STS_PGR_EN_BIT_MASK         (0x80000000U)
+
+/* Register:  CIA_ADJUST (0x1A) */
+#define DW3000_REG_14_CIA_ADJUST_OFFSET                      0x1A
+#define DW3000_REG_14_CIA_ADJUST_BYTE_LEN                    (2U)
+/* Fields */
+#define DW3000_REG_14_CIA_ADJUST_PDOA_ADJ_BIT_OFFSET         (0U)
+#define DW3000_REG_14_CIA_ADJUST_PDOA_ADJ_BIT_MASK           (0x3FFFU)
 
 
 
