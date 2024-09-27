@@ -1,9 +1,6 @@
 #include "dw3000.h"
 
-
-
 #define DW3000_TXRX_BUF_MAX_LEN 1024
-
 
 
 void DW3000::read_full_address(uint8_t base_addr, uint8_t sub_addr, uint8_t *data, uint16_t len) {
