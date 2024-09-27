@@ -4,7 +4,7 @@
 // Macro to extract a specific field value from a register using its mask and offset
 #define GET_FVAL(reg_val, mask, offset)       (((reg_val) & (mask)) >> (offset))
 // Macro to set a specific field value in a register using its mask and offset
-#define SET_FVAL(reg_val, mask, offset, value)  ((reg_val) = (((reg_val) & ~(mask)) | (((value) << (offset)) & (mask))))
+#define SET_FVAL(reg_val, mask, offset, value)  ((((reg_val) & ~(mask)) | (((value) << (offset)) & (mask))))
 
 /******************************************************************************
 * @brief Bit definitions for register page 0x00 : GEN_CFG_AES LOW
@@ -1428,10 +1428,6 @@
 **/
 #define DW3000_REG_20_TX_BUFFER_ADDR                         0x14
 #define DW3000_REG_20_TX_BUFFER_BYTE_LEN                     (1024U)
-
-
-
-
 
 
 #endif // __DW3000_REGS_H__
