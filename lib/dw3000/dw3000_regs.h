@@ -1226,6 +1226,103 @@
 #define DW3000_REG_12_STS_DIAG_3_CP_FP2M_BIT_OFFSET          (0U)
 #define DW3000_REG_12_STS_DIAG_3_CP_FP2M_BIT_MASK            (0x3FFFFFU)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x0D : CIA_IF p2
+* @note  Channel Impulse Response Analyser (CIA) Interface part 2
+**/
+#define DW3000_REG_13_ADDR                                   0x0D
+
+/* Register:  STS_DIAG_4 (0x00) */
+#define DW3000_REG_13_STS_DIAG_4_OFFSET                      0x00
+#define DW3000_REG_13_STS_DIAG_4_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_13_STS_DIAG_4_CP_FP3M_BIT_OFFSET          (0U)
+#define DW3000_REG_13_STS_DIAG_4_CP_FP3M_BIT_MASK            (0x3FFFFFU)
+
+/* Register:  STS_DIAG_RES1 (0x04) */
+#define DW3000_REG_13_STS_DIAG_RES1_OFFSET                   0x04
+#define DW3000_REG_13_STS_DIAG_RES1_BYTE_LEN                 (12U)
+
+/* Register:  STS_DIAG_8 (0x10) */
+#define DW3000_REG_13_STS_DIAG_8_OFFSET                      0x10
+#define DW3000_REG_13_STS_DIAG_8_BYTE_LEN                    (4U)
+/* Fields */
+#define DW3000_REG_13_STS_DIAG_8_CP_FP_BIT_OFFSET            (0U)
+#define DW3000_REG_13_STS_DIAG_8_CP_FP_BIT_MASK              (0x7FFFU)
+
+/* Register:  STS_DIAG_RES2 (0x14) */
+#define DW3000_REG_13_STS_DIAG_RES2_OFFSET                   0x14
+#define DW3000_REG_13_STS_DIAG_RES2_BYTE_LEN                 (12U)
+
+/* Register:  STS_DIAG_12 (0x20) */
+#define DW3000_REG_13_STS_DIAG_12_OFFSET                     0x20
+#define DW3000_REG_13_STS_DIAG_12_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS_DIAG_12_CP_NACC_BIT_OFFSET         (0U)
+#define DW3000_REG_13_STS_DIAG_12_CP_NACC_BIT_MASK           (0x7FU)
+
+/* Register:  STS_DIAG_RES3 (0x24) */
+#define DW3000_REG_13_STS_DIAG_RES3_OFFSET                   0x24
+#define DW3000_REG_13_STS_DIAG_RES3_BYTE_LEN                 (20U)
+
+/* Register:  STS1_DIAG_0 (0x38) */
+#define DW3000_REG_13_STS1_DIAG_0_OFFSET                     0x38
+#define DW3000_REG_13_STS1_DIAG_0_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_0_CP1_PEAKA_BIT_OFFSET       (0U)
+#define DW3000_REG_13_STS1_DIAG_0_CP1_PEAKA_BIT_MASK         (0x1FFFFFU)
+#define DW3000_REG_13_STS1_DIAG_0_CP1_PEAKI_BIT_OFFSET       (21U)
+#define DW3000_REG_13_STS1_DIAG_0_CP1_PEAKI_BIT_MASK         (0x3FE00000U)
+
+/* Register:  STS1_DIAG_1 (0x3C) */
+#define DW3000_REG_13_STS1_DIAG_1_OFFSET                     0x3C
+#define DW3000_REG_13_STS1_DIAG_1_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_1_CP1_CAREA_BIT_OFFSET       (0U)
+#define DW3000_REG_13_STS1_DIAG_1_CP1_CAREA_BIT_MASK         (0xFFFFU)
+
+/* Register:  STS1_DIAG_2 (0x40) */
+#define DW3000_REG_13_STS1_DIAG_2_OFFSET                     0x40
+#define DW3000_REG_13_STS1_DIAG_2_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_2_CP_FP1M_BIT_OFFSET         (0U)
+#define DW3000_REG_13_STS1_DIAG_2_CP_FP1M_BIT_MASK           (0x3FFFFFU)
+
+/* Register:  STS1_DIAG_3 (0x44) */
+#define DW3000_REG_13_STS1_DIAG_3_OFFSET                     0x44
+#define DW3000_REG_13_STS1_DIAG_3_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_3_CP_FP2M_BIT_OFFSET         (0U)
+#define DW3000_REG_13_STS1_DIAG_3_CP_FP2M_BIT_MASK           (0x3FFFFFU)
+
+/* Register:  STS1_DIAG_4 (0x48) */
+#define DW3000_REG_13_STS1_DIAG_4_OFFSET                     0x48
+#define DW3000_REG_13_STS1_DIAG_4_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_4_CP_FP3M_BIT_OFFSET         (0U)
+#define DW3000_REG_13_STS1_DIAG_4_CP_FP3M_BIT_MASK           (0x3FFFFFU)
+
+/* Register:  STS1_DIAG_RES1 (0x4C) */
+#define DW3000_REG_13_STS1_DIAG_RES1_OFFSET                  0x4C
+#define DW3000_REG_13_STS1_DIAG_RES1_BYTE_LEN                (12U)
+
+/* Register:  STS1_DIAG_8 (0x58) */
+#define DW3000_REG_13_STS1_DIAG_8_OFFSET                     0x58
+#define DW3000_REG_13_STS1_DIAG_8_BYTE_LEN                   (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_8_CP_FP_BIT_OFFSET           (0U)
+#define DW3000_REG_13_STS1_DIAG_8_CP_FP_BIT_MASK             (0x7FFFU)
+
+/* Register:  STS1_DIAG_RES2 (0x5C) */
+#define DW3000_REG_13_STS1_DIAG_RES2_OFFSET                  0x5C
+#define DW3000_REG_13_STS1_DIAG_RES2_BYTE_LEN                (12U)
+
+/* Register:  STS1_DIAG_12 (0x68) */
+#define DW3000_REG_13_STS1_DIAG_12_OFFSET                    0x68
+#define DW3000_REG_13_STS1_DIAG_12_BYTE_LEN                  (4U)
+/* Fields */
+#define DW3000_REG_13_STS1_DIAG_12_CP_NACC_BIT_OFFSET        (0U)
+#define DW3000_REG_13_STS1_DIAG_12_CP_NACC_BIT_MASK          (0x7FU)
 
 
 
