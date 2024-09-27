@@ -830,6 +830,78 @@
 **/
 #define DW3000_REG_8_ADDR                                   0x08
 
+/* Register: SAR_CTRL (0x00) */
+#define DW3000_REG_8_SAR_CTRL_OFFSET                        0x00
+#define DW3000_REG_8_SAR_CTRL_BYTE_LEN                      (1U)
+/* Fields */
+#define DW3000_REG_8_SAR_CTRL_SAR_START_BIT_OFFSET          (0U)
+#define DW3000_REG_8_SAR_CTRL_SAR_START_BIT_MASK            (0x1U)
+
+/* Register: SAR_STATUS (0x04) */
+#define DW3000_REG_8_SAR_STATUS_OFFSET                      0x04
+#define DW3000_REG_8_SAR_STATUS_BYTE_LEN                    (1U)
+/* Fields */
+#define DW3000_REG_8_SAR_STATUS_SAR_DONE_BIT_OFFSET         (0U)
+#define DW3000_REG_8_SAR_STATUS_SAR_DONE_BIT_MASK           (0x1U)
+
+/* Register: SAR_READING (0x08) */
+#define DW3000_REG_8_SAR_READING_OFFSET                     0x08
+#define DW3000_REG_8_SAR_READING_BYTE_LEN                   (3U)
+/* Fields */
+#define DW3000_REG_8_SAR_READING_SAR_LVBAT_BIT_OFFSET       (0U)
+#define DW3000_REG_8_SAR_READING_SAR_LVBAT_BIT_MASK         (0xFFU)
+#define DW3000_REG_8_SAR_READING_SAR_LTEMP_BIT_OFFSET       (8U)
+#define DW3000_REG_8_SAR_READING_SAR_LTEMP_BIT_MASK         (0xFF00U)
+
+/* Register: SAR_WAKE_RD (0x0C) */
+#define DW3000_REG_8_SAR_WAKE_RD_OFFSET                     0x0C
+#define DW3000_REG_8_SAR_WAKE_RD_BYTE_LEN                   (2U)
+/* Fields */
+#define DW3000_REG_8_SAR_WAKE_RD_SAR_WVBAT_BIT_OFFSET       (0U)
+#define DW3000_REG_8_SAR_WAKE_RD_SAR_WVBAT_BIT_MASK         (0xFFU)
+#define DW3000_REG_8_SAR_WAKE_RD_SAR_WTEMP_BIT_OFFSET       (8U)
+#define DW3000_REG_8_SAR_WAKE_RD_SAR_WTEMP_BIT_MASK         (0xFF00U)
+
+/* Register: PGC_CTRL (0x10) */
+#define DW3000_REG_8_PGC_CTRL_OFFSET                        0x10
+#define DW3000_REG_8_PGC_CTRL_BYTE_LEN                      (2U)
+/* Fields */
+#define DW3000_REG_8_PGC_CTRL_PGC_START_BIT_OFFSET          (0U)
+#define DW3000_REG_8_PGC_CTRL_PGC_START_BIT_MASK            (0x1U)
+#define DW3000_REG_8_PGC_CTRL_PGC_AUTO_CAL_BIT_OFFSET       (1U)
+#define DW3000_REG_8_PGC_CTRL_PGC_AUTO_CAL_BIT_MASK         (0x2U)
+#define DW3000_REG_8_PGC_CTRL_PGC_TMEAS_BIT_OFFSET          (2U)
+#define DW3000_REG_8_PGC_CTRL_PGC_TMEAS_BIT_MASK            (0x3CU)
+
+/* Register: PGC_STATUS (0x14) */
+#define DW3000_REG_8_PGC_STATUS_OFFSET                      0x14
+#define DW3000_REG_8_PGC_STATUS_BYTE_LEN                    (2U)
+/* Fields */
+#define DW3000_REG_8_PGC_STATUS_PG_DELAY_CNT_BIT_OFFSET     (0U)
+#define DW3000_REG_8_PGC_STATUS_PG_DELAY_CNT_BIT_MASK       (0xFFFU)
+#define DW3000_REG_8_PGC_STATUS_PAUTOCAL_DONE_BIT_OFFSET    (12U)
+#define DW3000_REG_8_PGC_STATUS_PAUTOCAL_DONE_BIT_MASK      (0x1000U)
+
+/* Register: PG_TEST (0x18) */
+#define DW3000_REG_8_PG_TEST_OFFSET                         0x18
+#define DW3000_REG_8_PG_TEST_BYTE_LEN                       (2U)
+
+/* Register: PG_CAL_TARGET (0x1C) */
+#define DW3000_REG_8_PG_CAL_TARGET_OFFSET                   0x1C
+#define DW3000_REG_8_PG_CAL_TARGET_BYTE_LEN                 (2U)
+/* Fields */
+#define DW3000_REG_8_PG_CAL_TARGET_PG_TARGET_BIT_OFFSET     (0U)
+#define DW3000_REG_8_PG_CAL_TARGET_PG_TARGET_BIT_MASK       (0xFFFU)
+
+
+
+
+
+
+
+
+
+
 
 
 #endif // __DW3000_REGS_H__
