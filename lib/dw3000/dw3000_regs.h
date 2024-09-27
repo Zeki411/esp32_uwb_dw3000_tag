@@ -930,7 +930,74 @@
 #define DW3000_REG_9_XTAL_XTAL_TRIM_BIT_OFFSET              (0U)
 #define DW3000_REG_9_XTAL_XTAL_TRIM_BIT_MASK                (0x3FU)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x0A : AON
+* @note  Always on system control interface block
+**/
+#define DW3000_REG_10_ADDR                                   0x0A
 
+/* Register: AON_DIG_CFG (0x00) */
+#define DW3000_REG_10_AON_DIG_CFG_OFFSET                     0x00
+#define DW3000_REG_10_AON_DIG_CFG_BYTE_LEN                   (3U)
+/* Fields */
+#define DW3000_REG_10_AON_DIG_CFG_ONW_AON_DLD_BIT_OFFSET     (0U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_AON_DLD_BIT_MASK       (0x1U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_RUN_SAR_BIT_OFFSET     (1U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_RUN_SAR_BIT_MASK       (0x2U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_GO2IDLE_BIT_OFFSET     (8U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_GO2IDLE_BIT_MASK       (0x100U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_GO2RX_BIT_OFFSET       (9U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_GO2RX_BIT_MASK         (0x200U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_PGFCAL_BIT_OFFSET      (11U)
+#define DW3000_REG_10_AON_DIG_CFG_ONW_PGFCAL_BIT_MASK        (0x800U)
+
+/* Register: AON_CTRL (0x04) */
+#define DW3000_REG_10_AON_CTRL_OFFSET                        0x04
+#define DW3000_REG_10_AON_CTRL_BYTE_LEN                      (1U)
+/* Fields */
+#define DW3000_REG_10_AON_CTRL_RESTORE_BIT_OFFSET            (0U)
+#define DW3000_REG_10_AON_CTRL_RESTORE_BIT_MASK              (0x1U)
+#define DW3000_REG_10_AON_CTRL_SAVE_BIT_OFFSET               (1U)
+#define DW3000_REG_10_AON_CTRL_SAVE_BIT_MASK                 (0x2U)
+#define DW3000_REG_10_AON_CTRL_CFG_UPLOAD_BIT_OFFSET         (2U)
+#define DW3000_REG_10_AON_CTRL_CFG_UPLOAD_BIT_MASK           (0x4U)
+#define DW3000_REG_10_AON_CTRL_DCA_READ_BIT_OFFSET           (3U)
+#define DW3000_REG_10_AON_CTRL_DCA_READ_BIT_MASK             (0x8U)
+#define DW3000_REG_10_AON_CTRL_DCA_WRITE_BIT_OFFSET          (4U)
+#define DW3000_REG_10_AON_CTRL_DCA_WRITE_BIT_MASK            (0x10U)
+#define DW3000_REG_10_AON_CTRL_DCA_WRITE_HI_BIT_OFFSET       (5U)
+#define DW3000_REG_10_AON_CTRL_DCA_WRITE_HI_BIT_MASK         (0x20U)
+#define DW3000_REG_10_AON_CTRL_DCA_ENAB_BIT_OFFSET           (7U)
+#define DW3000_REG_10_AON_CTRL_DCA_ENAB_BIT_MASK             (0x80U)
+
+/* Register: AON_RDATA (0x08) */
+#define DW3000_REG_10_AON_RDATA_OFFSET                       0x08
+#define DW3000_REG_10_AON_RDATA_BYTE_LEN                     (1U)
+
+/* Register: AON_ADDR (0x0C) */
+#define DW3000_REG_10_AON_ADDR_OFFSET                        0x0C
+#define DW3000_REG_10_AON_ADDR_BYTE_LEN                      (2U)
+
+/* Register: AON_WDATA (0x10) */
+#define DW3000_REG_10_AON_WDATA_OFFSET                       0x10
+#define DW3000_REG_10_AON_WDATA_BYTE_LEN                     (1U)
+
+/* Register: AON_CFG (0x14) */
+#define DW3000_REG_10_AON_CFG_OFFSET                         0x14
+#define DW3000_REG_10_AON_CFG_BYTE_LEN                       (1U)
+/* Fields */
+#define DW3000_REG_10_AON_CFG_SLEEP_EN_BIT_OFFSET            (0U)
+#define DW3000_REG_10_AON_CFG_SLEEP_EN_BIT_MASK              (0x1U)
+#define DW3000_REG_10_AON_CFG_WAKE_CNT_BIT_OFFSET            (1U)
+#define DW3000_REG_10_AON_CFG_WAKE_CNT_BIT_MASK              (0x2U)
+#define DW3000_REG_10_AON_CFG_BROUT_EN_BIT_OFFSET            (2U)
+#define DW3000_REG_10_AON_CFG_BROUT_EN_BIT_MASK              (0x4U)
+#define DW3000_REG_10_AON_CFG_WAKE_CSN_BIT_OFFSET            (3U)
+#define DW3000_REG_10_AON_CFG_WAKE_CSN_BIT_MASK              (0x8U)
+#define DW3000_REG_10_AON_CFG_WAKE_WUP_BIT_OFFSET            (4U)
+#define DW3000_REG_10_AON_CFG_WAKE_WUP_BIT_MASK              (0x10U)
+#define DW3000_REG_10_AON_CFG_PRES_SLEEP_BIT_OFFSET          (5U)
+#define DW3000_REG_10_AON_CFG_PRES_SLEEP_BIT_MASK            (0x20U)
 
 
 
