@@ -893,8 +893,42 @@
 #define DW3000_REG_8_PG_CAL_TARGET_PG_TARGET_BIT_OFFSET     (0U)
 #define DW3000_REG_8_PG_CAL_TARGET_PG_TARGET_BIT_MASK       (0xFFFU)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x09 : FS_CTRL
+* @note  Frequency synthesiser control block
+**/
+#define DW3000_REG_9_ADDR                                   0x09
 
+/* Register: PLL_CFG (0x00) */
+#define DW3000_REG_9_PLL_CFG_OFFSET                         0x00
+#define DW3000_REG_9_PLL_CFG_BYTE_LEN                       (2U)
 
+/* Register: PLL_CC (0x04) */
+#define DW3000_REG_9_PLL_CC_OFFSET                          0x04
+#define DW3000_REG_9_PLL_CC_BYTE_LEN                        (1U)
+/* Fields */
+#define DW3000_REG_9_PLL_CC_CH9_CODE_BIT_OFFSET             (0U)
+#define DW3000_REG_9_PLL_CC_CH9_CODE_BIT_MASK               (0xFFU)
+#define DW3000_REG_9_PLL_CC_CH5_CODE_BIT_OFFSET             (8U)
+#define DW3000_REG_9_PLL_CC_CH5_CODE_BIT_MASK               (0x3FFF00U)
+
+/* Register: PLL_CAL (0x08) */
+#define DW3000_REG_9_PLL_CAL_OFFSET                         0x08
+#define DW3000_REG_9_PLL_CAL_BYTE_LEN                       (2U)
+/* Fields */
+#define DW3000_REG_9_PLL_CAL_USE_OLD_BIT_OFFSET             (1U)
+#define DW3000_REG_9_PLL_CAL_USE_OLD_BIT_MASK               (0x2U)
+#define DW3000_REG_9_PLL_CAL_PLL_CFG_LD_BIT_OFFSET          (4U)
+#define DW3000_REG_9_PLL_CAL_PLL_CFG_LD_BIT_MASK            (0xF0U)
+#define DW3000_REG_9_PLL_CAL_CAL_EN_BIT_OFFSET              (8U)
+#define DW3000_REG_9_PLL_CAL_CAL_EN_BIT_MASK                (0x100U)
+
+/* Register: XTAL (0x14) */
+#define DW3000_REG_9_XTAL_OFFSET                            0x14
+#define DW3000_REG_9_XTAL_BYTE_LEN                          (1U)
+/* Fields */
+#define DW3000_REG_9_XTAL_XTAL_TRIM_BIT_OFFSET              (0U)
+#define DW3000_REG_9_XTAL_XTAL_TRIM_BIT_MASK                (0x3FU)
 
 
 
