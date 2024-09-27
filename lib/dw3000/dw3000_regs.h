@@ -1394,6 +1394,43 @@
 #define DW3000_REG_14_CIA_ADJUST_PDOA_ADJ_BIT_OFFSET         (0U)
 #define DW3000_REG_14_CIA_ADJUST_PDOA_ADJ_BIT_MASK           (0x3FFFU)
 
+/******************************************************************************
+* @brief Bit definitions for register page 0x0F : DIG_DIAG
+* @note  Digital diagnostics interface
+**/
+#define DW3000_REG_15_ADDR                                   0x0F
+//TODO: Add register definitions
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x11 : PMSC_CTRL
+* @note  Power management, timing and seq control
+**/
+#define DW3000_REG_17_ADDR                                   0x11
+//TODO: Add register definitions
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x12 : RX_BUFFER_0
+* @note  RX frame data buffer 0
+**/
+#define DW3000_REG_18_RX_BUFFER_0_ADDR                       0x12
+#define DW3000_REG_18_RX_BUFFER_0_BYTE_LEN                   (1024U)
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x13 : RX_BUFFER_1
+* @note  RX frame data buffer 1
+**/
+#define DW3000_REG_19_RX_BUFFER_1_ADDR                       0x13
+#define DW3000_REG_19_RX_BUFFER_1_BYTE_LEN                   (1024U)
+
+/******************************************************************************
+* @brief Bit definitions for register page 0x14 : TX_BUFFER
+* @note  Transmit data buffer
+**/
+#define DW3000_REG_20_TX_BUFFER_ADDR                         0x14
+#define DW3000_REG_20_TX_BUFFER_BYTE_LEN                     (1024U)
+
+
+
 
 
 
