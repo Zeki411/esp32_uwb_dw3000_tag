@@ -31,7 +31,7 @@ static dwt_config_t config = {
 };
 
 /* Inter-ranging delay period, in milliseconds. */
-#define RNG_DELAY_MS 3000
+#define RNG_DELAY_MS 100
 
 /* Default antenna delay values for 64 MHz PRF. See NOTE 2 below. */
 #define TX_ANT_DLY 16385
@@ -59,8 +59,8 @@ static uint8_t rx_buffer[RX_BUF_LEN];
 static uint32_t status_reg = 0;
 
 /* Delay between frames, in UWB microseconds. See NOTE 1 below. */
-#define POLL_TX_TO_RESP_RX_DLY_UUS 240
-#define RESP_RX_TIMEOUT_UUS 400
+#define POLL_TX_TO_RESP_RX_DLY_UUS 100
+#define RESP_RX_TIMEOUT_UUS 500
 
 
 /* Hold copies of computed time of flight and distance here for reference so that it can be examined at a debug breakpoint. */

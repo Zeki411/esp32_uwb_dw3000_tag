@@ -55,7 +55,7 @@ static uint8_t rx_buffer[RX_BUF_LEN];
 static uint32_t status_reg = 0;
 
 /* Delay between frames, in UWB microseconds. See NOTE 1 below. */
-#define POLL_RX_TO_RESP_TX_DLY_UUS 450
+#define POLL_RX_TO_RESP_TX_DLY_UUS 600
 
 /* Timestamps of frames transmission/reception. */
 static uint64_t poll_rx_ts;
