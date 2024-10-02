@@ -11,8 +11,8 @@
 #define TEST_MODE TEST_TWR
 
 /* Choose device mode */
-// #define UWB_MODE TAG
-#define UWB_MODE ANCHOR
+#define UWB_MODE TAG
+// #define UWB_MODE ANCHOR
 
 #if (UWB_MODE == TAG)
 #include "tag_main.h"

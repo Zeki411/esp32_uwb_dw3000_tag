@@ -126,7 +126,7 @@ void tag_main(void) {
 
     while(1)
     {
-        ESP_LOGI(TAG_TWR_LOG_TAG, "Tag Ranging");
+        // ESP_LOGI(TAG_TWR_LOG_TAG, "Tag Ranging");
 
         /* Write frame data to DW IC and prepare transmission. See NOTE 7 below. */
         tx_poll_msg[ALL_MSG_SN_IDX] = frame_seq_nb;
@@ -142,7 +142,7 @@ void tag_main(void) {
         while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG_BIT_MASK | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR)))
         { };
 
-        ESP_LOGI(TAG_TWR_LOG_TAG, "Status Reg: %x", status_reg & (SYS_STATUS_RXFCG_BIT_MASK | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR));
+        // ESP_LOGI(TAG_TWR_LOG_TAG, "Status Reg: %x", status_reg & (SYS_STATUS_RXFCG_BIT_MASK | SYS_STATUS_ALL_RX_TO | SYS_STATUS_ALL_RX_ERR));
 
         /* Increment frame sequence number after transmission of the poll message (modulo 256). */
         frame_seq_nb++;
@@ -190,7 +190,6 @@ void tag_main(void) {
                     /* Display computed distance on LCD. */
                     // snprintf(dist_str, sizeof(dist_str), "DIST: %3.2f m", distance);
                     ESP_LOGI(TAG_TWR_LOG_TAG, "DIST: %3.2f m", distance);
-                    test_run_info((unsigned char *)dist_str);
                 }
             }
         }

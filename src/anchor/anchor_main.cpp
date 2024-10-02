@@ -121,12 +121,8 @@ void anchor_main(void) {
         while (!((status_reg = dwt_read32bitreg(SYS_STATUS_ID)) & (SYS_STATUS_RXFCG_BIT_MASK | SYS_STATUS_ALL_RX_ERR)))
         { };
 
-        // ESP_LOGI(ANCHOR_TWR_LOG_TAG, "status_reg: %x", status_reg & (SYS_STATUS_RXFCG_BIT_MASK | SYS_STATUS_ALL_RX_ERR));
-
         if (status_reg & SYS_STATUS_RXFCG_BIT_MASK)
-        {
-            // ESP_LOGI(ANCHOR_TWR_LOG_TAG, "RX GOOD");
-            
+        {   
             uint32_t frame_len;
 
             /* Clear good RX frame event in the DW IC status register. */
@@ -178,8 +174,6 @@ void anchor_main(void) {
 
                         /* Increment frame sequence number after transmission of the poll message (modulo 256). */
                         frame_seq_nb++;
-
-                        // ESP_LOGI(ANCHOR_TWR_LOG_TAG, "Response sent");
                     }
                     else
                     {
