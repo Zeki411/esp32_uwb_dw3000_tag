@@ -8,6 +8,7 @@
 #define TAG_TWR_LOG_TAG "TAG"
 #define TAG_TWR_LOG_LEVEL ESP_LOG_INFO
 
+
 // connection pins
 const uint8_t PIN_RST = 27; // reset pin
 const uint8_t PIN_IRQ = 34; // irq pin
@@ -70,14 +71,30 @@ static double distance;
 /* Values for the PG_DELAY and TX_POWER registers reflect the bandwidth and power of the spectrum at the current
  * temperature. These values can be calibrated prior to taking reference measurements. See NOTE 2 below. */
 extern dwt_txconfig_t txconfig_options;
+
+uint8_t test_count=0;
+
+void IRAM_ATTR handleInterrupt() {
+    // Interrupt handling code
+    test_count++;
+    if (test_count == 100) {
+        test_count = 0;
+        ESP_LOGI(TAG_TWR_LOG_TAG, "Interrupt Handler");
+    }
+}
+
 void tag_main(void) {
 
     esp_log_level_set(TAG_TWR_LOG_TAG, TAG_TWR_LOG_LEVEL);
 
+    
+
     /* Configure SPI rate, DW3000 supports up to 38 MHz */
     /* Reset DW IC */
+    port_set_dwic_isr(&handleInterrupt); // Set the interrupt handler for DW IC IRQ
     spiBegin(PIN_IRQ, PIN_RST);
     spiSelect(PIN_SS);
+    
 
     delay(200); // Time needed for DW3000 to start up (transition from INIT_RC to IDLE_RC, or could wait for SPIRDY event)
 
@@ -122,7 +139,18 @@ void tag_main(void) {
     //  * Note, in real low power applications the LEDs should not be used. */
     dwt_setlnapamode(DWT_LNA_ENABLE | DWT_PA_ENABLE);
 
+    /* Configure the IRQ events */
+    dwt_setinterrupt(\
+        (uint32_t) (SYS_ENABLE_LO_RXFCG_ENABLE_BIT_MASK | SYS_ENABLE_LO_RXFTO_ENABLE_BIT_MASK | SYS_ENABLE_LO_RXPTO_ENABLE_BIT_MASK |\
+                    SYS_ENABLE_LO_RXPHE_ENABLE_BIT_MASK | SYS_ENABLE_LO_RXFCE_ENABLE_BIT_MASK | SYS_ENABLE_LO_RXFSL_ENABLE_BIT_MASK |\
+                    SYS_ENABLE_LO_RXSTO_ENABLE_BIT_MASK | SYS_ENABLE_LO_ARFE_ENABLE_BIT_MASK  | SYS_ENABLE_LO_CIAERR_ENABLE_BIT_MASK),\
+        (uint32_t) (0x00),\
+        DWT_ENABLE_INT_ONLY
+    );
+
     ESP_LOGI(TAG_TWR_LOG_TAG, "Tag Initialization complete");
+
+
 
     while(1)
     {

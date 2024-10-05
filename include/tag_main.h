@@ -5,4 +5,6 @@
 extern void tag_main(void);
 extern void tag_simple_tx_main(void);
 
+extern void tag_twr_main(void);
+
 #endif // __TAG_MAIN_H__

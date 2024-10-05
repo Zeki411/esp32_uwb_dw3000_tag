@@ -23,7 +23,8 @@
 void setup() {
 #if (TEST_MODE == TEST_TWR)
     #if (UWB_MODE == TAG)
-        tag_main();
+        // tag_main();
+        tag_twr_main();
     #elif (UWB_MODE == ANCHOR)
         anchor_main();
     #endif
@@ -34,6 +35,9 @@ void setup() {
         anchor_simple_rx_main();
     #endif
 #endif // Closing the outer conditional
+
+
+
 }
 
 void loop() {
