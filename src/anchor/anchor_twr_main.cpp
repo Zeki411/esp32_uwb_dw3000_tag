@@ -1,12 +1,11 @@
+#include "anchor_main.h"
 #include <esp_log.h>
-#include <esp_intr_alloc.h>
-#include "tag_main.h"
 #include "DW3000Ranging.h"
 
-#define TAG_TWR_LOG_TAG "TAG"
-#define TAG_TWR_LOG_LEVEL ESP_LOG_INFO
+#define ANCHOR_TWR_LOG_TAG "ANCHOR_TWR"
+#define ANCHOR_TWR_LOG_LEVEL ESP_LOG_INFO
 
-#define TAG_ADDRESS_STR "7D:01:22:EA:82:60:3B:9C"
+#define ANCHOR_ADDRESS_STR "7E:01:22:EA:82:60:3B:9C"
 
 // connection pins
 const uint8_t PIN_RST = 27; // reset pin
@@ -14,7 +13,7 @@ const uint8_t PIN_IRQ = 34; // irq pin
 const uint8_t PIN_SS = 4; // spi select pin
 
 /* Default communication configuration. We use default non-STS DW mode. */
-static dwt_config_t twr_dwt_config = {
+static dwt_config_t anchor_twr_dwt_config = {
         5,               /* Channel number. */
         DWT_PLEN_128,    /* Preamble length. Used in TX only. */
         DWT_PAC8,        /* Preamble acquisition chunk size. Used in RX only. */
@@ -30,17 +29,15 @@ static dwt_config_t twr_dwt_config = {
         DWT_PDOA_M0      /* PDOA mode off */
 };
 
+void anchor_twr_main(void){
 
-void tag_twr_main(void){
-
-    esp_log_level_set(TAG_TWR_LOG_TAG, TAG_TWR_LOG_LEVEL);
+    esp_log_level_set(ANCHOR_TWR_LOG_TAG, ANCHOR_TWR_LOG_LEVEL);
 
     dw3000ranging.initCommunication(PIN_RST, PIN_SS, PIN_IRQ);
 
-    dw3000ranging.startAsTag((char *)TAG_ADDRESS_STR, 0xDECA, twr_dwt_config, false);
+    dw3000ranging.startAsAnchor((char *)ANCHOR_ADDRESS_STR, 0xDECA, anchor_twr_dwt_config, false);
 
-    ESP_LOGI(TAG_TWR_LOG_TAG, "Tag TWR Initialization complete");
-
+    ESP_LOGI(ANCHOR_TWR_LOG_TAG, "Anchor TWR Initialization complete");
 
     while(1) {
         dw3000ranging.loop();

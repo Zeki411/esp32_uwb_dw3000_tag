@@ -87,8 +87,6 @@ void tag_main(void) {
 
     esp_log_level_set(TAG_TWR_LOG_TAG, TAG_TWR_LOG_LEVEL);
 
-    
-
     /* Configure SPI rate, DW3000 supports up to 38 MHz */
     /* Reset DW IC */
     port_set_dwic_isr(&handleInterrupt); // Set the interrupt handler for DW IC IRQ

@@ -1,23 +1,28 @@
 #include <Arduino.h>
 
+
 #define TEST_SIMPLE 0
 #define TEST_TWR 1
 
 #define TAG 0
 #define ANCHOR 1
+#define SNIFFER 2
 
 /* Choose test mode */
 // #define TEST_MODE TEST_SIMPLE
 #define TEST_MODE TEST_TWR
 
 /* Choose device mode */
-#define UWB_MODE TAG
-// #define UWB_MODE ANCHOR
+// #define UWB_MODE TAG
+#define UWB_MODE ANCHOR
+// #define UWB_MODE SNIFFER
 
 #if (UWB_MODE == TAG)
 #include "tag_main.h"
 #elif (UWB_MODE == ANCHOR)
 #include "anchor_main.h"
+#elif (UWB_MODE == SNIFFER)
+#include "sniffer_main.h"
 #endif
 
 void setup() {
@@ -26,7 +31,10 @@ void setup() {
         // tag_main();
         tag_twr_main();
     #elif (UWB_MODE == ANCHOR)
-        anchor_main();
+        // anchor_main();
+        anchor_twr_main();
+    #elif (UWB_MODE == SNIFFER)
+        sniffer_main();
     #endif
 #elif (TEST_MODE == TEST_SIMPLE)
     #if (UWB_MODE == TAG)
